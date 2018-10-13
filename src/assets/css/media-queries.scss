@@ -1,0 +1,12 @@
+@media only screen and (max-width: 1049px) {
+    app-header .header-area .navbar-brand {
+        margin-right: 1em !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        float: none;
+        width: auto;
+    }
+}
