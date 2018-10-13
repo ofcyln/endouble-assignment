@@ -137,11 +137,11 @@
             "spec": false
         },
         "@schematics/angular:component": {
-            "prefix": "rdm",
+            "prefix": "app",
             "styleext": "scss"
         },
         "@schematics/angular:directive": {
-            "prefix": "rdm"
+            "prefix": "app"
         }
     }
 }
