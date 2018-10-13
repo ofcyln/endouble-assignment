@@ -9,18 +9,19 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello/fontello.svg?80243240#fontello') format('svg');
+    src: url('../font/fontello.svg?31837419#fontello') format('svg');
   }
 }
 */
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="e-icon-"]:before, [class*=" e-icon-"]:before {
     font-family: "fontello";
     font-style: normal;
     font-weight: normal;
@@ -55,9 +56,17 @@
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-login:before { content: '\e800'; } /* '' */
-.icon-logout:before { content: '\e801'; } /* '' */
-.icon-signup:before { content: '\e802'; } /* '' */
-.icon-password:before { content: '\e803'; } /* '' */
-.icon-email:before { content: '\e804'; } /* '' */
-.icon-recipe:before { content: '\e805'; } /* '' */
+.e-icon-ok:before { content: '\e800'; } /* '' */
+.e-icon-youtube:before { content: '\e801'; } /* '' */
+.e-icon-briefcase:before { content: '\e802'; } /* '' */
+.e-icon-email:before { content: '\e804'; } /* '' */
+.e-icon-monitor:before { content: '\e806'; } /* '' */
+.e-icon-search:before { content: '\e807'; } /* '' */
+.e-icon-twitter:before { content: '\f309'; } /* '' */
+.e-icon-facebook:before { content: '\f30c'; } /* '' */
+.e-icon-gplus:before { content: '\f30f'; } /* '' */
+.e-icon-pinterest:before { content: '\f312'; } /* '' */
+.e-icon-tumblr:before { content: '\f315'; } /* '' */
+.e-icon-linkedin:before { content: '\f318'; } /* '' */
+.e-icon-instagram:before { content: '\f32d'; } /* '' */
+.e-icon-dropbox:before { content: '\f330'; } /* '' */

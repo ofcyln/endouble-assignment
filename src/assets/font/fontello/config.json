@@ -25,12 +25,6 @@
       "src": "entypo"
     },
     {
-      "uid": "d531ea7e8c094b73df941ed0bac921f3",
-      "css": "bag",
-      "code": 62096,
-      "src": "fontawesome"
-    },
-    {
       "uid": "7222571caa5c15f83dcfd447c58d68d9",
       "css": "search",
       "code": 59399,
@@ -89,6 +83,12 @@
       "css": "ok",
       "code": 59392,
       "src": "modernpics"
+    },
+    {
+      "uid": "053b757d97042e1c94276200c7b64b91",
+      "css": "briefcase",
+      "code": 59394,
+      "src": "fontawesome"
     }
   ]
 }

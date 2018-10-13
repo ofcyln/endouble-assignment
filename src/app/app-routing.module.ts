@@ -4,8 +4,11 @@ import { JobsComponent } from './jobs/jobs.component';
 import { JobApplicationComponent } from './jobs/job-application/job-application.component';
 
 const appRoutes: Routes = [
-    { path: '', component: JobsComponent },
-    { path: 'job-application', component: JobApplicationComponent },
+    {
+        path: '',
+        component: JobsComponent,
+        children: [{ path: 'job-application', component: JobApplicationComponent }],
+    },
 ];
 
 @NgModule({
