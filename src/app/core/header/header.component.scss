@@ -194,4 +194,7 @@
             }
         }
     }
+    .collapse.navbar-collapse.active {
+        display: block !important;
+    }
 }
