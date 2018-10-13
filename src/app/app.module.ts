@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { JobsModule } from './jobs/jobs.module';
+import { JobModule } from './job/job.module';
 import { SharedModule } from './shared/shared.module';
 import { ApiService } from './shared/services/api.service';
 
@@ -15,7 +15,7 @@ import { ApiService } from './shared/services/api.service';
         BrowserModule,
         HttpClientModule,
         CoreModule,
-        JobsModule,
+        JobModule,
         AppRoutingModule,
         SharedModule,
     ],

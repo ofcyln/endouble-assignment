@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JobsComponent } from './jobs/jobs.component';
-import { JobApplicationComponent } from './jobs/job-application/job-application.component';
+
+import { JobComponent } from './job/job.component';
+import { JobApplicationComponent } from './job/job-application/job-application.component';
 
 const appRoutes: Routes = [
     {
         path: '',
-        component: JobsComponent,
+        component: JobComponent,
         children: [{ path: 'job-application', component: JobApplicationComponent }],
     },
 ];

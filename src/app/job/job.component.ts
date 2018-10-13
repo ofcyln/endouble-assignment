@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-jobs',
-    templateUrl: './jobs.component.html',
-    styleUrls: ['./jobs.component.scss'],
+    templateUrl: './job.component.html',
+    styleUrls: ['./job.component.scss'],
 })
-export class JobsComponent implements OnInit {
+export class JobComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {}
