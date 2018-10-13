@@ -1,3 +1,49 @@
-<div class="col">
-    footer works!
-</div>
+<footer class="footer-area col no-padding">
+    <a class="back-to-top-area cursor-pointer">
+        BACK TO TOP
+    </a>
+
+    <article class="row">
+        <section class="col-6 col-lg-3 no-padding">
+            <h3 class="col-12 no-padding">JOBS AT</h3>
+            <a routerLink="/" class="d-flex cursor-pointer">Home</a>
+            <a routerLink="/" class="d-flex cursor-pointer active">Jobs</a>
+            <a routerLink="/" class="d-flex cursor-pointer">About</a>
+            <a routerLink="/" class="d-flex cursor-pointer">Department</a>
+        </section>
+
+        <section class="col-6 col-lg-3 no-padding">
+            <h3 class="col-12 no-padding">INFORMATION</h3>
+            <a routerLink="/" class="d-flex cursor-pointer">F.A.Q.</a>
+            <a routerLink="/" class="d-flex cursor-pointer">Application process</a>
+            <a routerLink="/" class="d-flex cursor-pointer">Privacy policy</a>
+            <a routerLink="/" class="d-flex cursor-pointer">Contact</a>
+        </section>
+
+        <section class="col-12 col-lg-3 no-padding">
+            <h3 class="col-12 no-padding">FOLLOW US</h3>
+            <div class="row no-margin">
+                <div
+                    *ngFor="let shareElement of shareElemets"
+                    class="col-6 col-sm-6 no-padding mb-1">
+                    <a
+                        href="{{shareElement.link}}"
+                        target="_blank"
+                        class="d-flex align-items-center no-margin">
+                        <span class="e-icon-{{shareElement.icon}} footer-icon"></span>
+                        <a class="d-flex cursor-pointer col no-margin footer-icon-info">{{ shareElement.name }}</a>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-12 col-lg-3 no-padding">
+            <h3 routerLink="/" class="col-12 no-padding">JOB ALERT</h3>
+            <a routerLink="/" class="d-flex cursor-pointer">Subscribe to our job alert</a>
+        </section>
+    </article>
+
+    <section class="col no-padding footer-bottom-area d-flex align-items-center">
+        <p class="col no-padding">&copy;</p>
+    </section>
+</footer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService, ShareElements } from '../../shared/services/api.service';
 
 @Component({
     selector: 'app-footer',
@@ -6,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-    constructor() {}
+    public shareElemets: ShareElements[];
 
-    ngOnInit() {}
+    constructor(private apiService: ApiService) {}
+
+    ngOnInit() {
+        this.apiService.getSharedElements('../../../assets/api/sharedElementsData.json').subscribe(
+            (response: ShareElements[]) => {
+                this.shareElemets = response;
+            },
+            (error) => {
+                error = this.apiService.apiError.message;
+
+                console.log(error);
+            },
+        );
+    }
 }

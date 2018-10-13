@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
     declarations: [HeaderComponent, FooterComponent],
     imports: [CommonModule, SharedModule, AppRoutingModule],
+    providers: [],
     exports: [AppRoutingModule, HeaderComponent, FooterComponent],
 })
 export class CoreModule {}

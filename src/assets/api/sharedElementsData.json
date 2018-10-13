@@ -1,0 +1,47 @@
+[
+    {
+        "icon": "email",
+        "name": "Newsletter",
+        "link": "#"
+    },
+    {
+        "icon": "instagram",
+        "name": "Instagram",
+        "link": "#"
+    },
+    {
+        "icon": "twitter",
+        "name": "Twitter",
+        "link": "#"
+    },
+    {
+        "icon": "tumblr",
+        "name": "Tumblr",
+        "link": "#"
+    },
+    {
+        "icon": "linkedin",
+        "name": "Linkedin",
+        "link": "#"
+    },
+    {
+        "icon": "facebook",
+        "name": "Facebook",
+        "link": "#"
+    },
+    {
+        "icon": "pinterest",
+        "name": "Pinterest",
+        "link": "#"
+    },
+    {
+        "icon": "youtube",
+        "name": "Youtube",
+        "link": "#"
+    },
+    {
+        "icon": "gplus",
+        "name": "Google+",
+        "link": "#"
+    }
+]

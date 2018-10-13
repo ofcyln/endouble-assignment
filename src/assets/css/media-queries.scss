@@ -38,8 +38,25 @@
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 668px) {
-
+@media only screen and (min-width: 320px) and (max-width: 813px) {
+    .d-none-lt-sm {
+        display: none !important;
+    }
+    .footer-area {
+        article {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+        section {
+            margin-top: 10px !important;
+        }
+    }
+    .footer-bottom-area {
+        p {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
