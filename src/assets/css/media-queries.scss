@@ -1,7 +1,45 @@
 @media only screen and (max-width: 1049px) {
-    app-header .header-area .navbar-brand {
+    .header-area .navbar-brand {
         margin-right: 1em !important;
     }
+}
+
+@media only screen and (max-width: 991px) {
+    .d-none-lgt-sm {
+        display: none!important;
+    }
+    .header-area {
+        min-height: 94px !important;
+        padding: 0 !important;
+    }
+    .mobile-menu-area.d-none {
+        display: block !important;
+        min-height: 94px;
+    }
+    .mobile-menu-content {
+        min-height: 45px;
+    }
+    .header-area .navbar-brand {
+        position: absolute;
+        left: 70px;
+    }
+    .briefcase-area {
+        position: absolute;
+        right: 45px;
+        top: 15px;
+    }
+    .navbar-collapse .search-area {
+        display: none !important;
+    }
+    .search-area {
+        &:after {
+            right: 18px!important;
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 668px) {
+
 }
 
 @media only screen and (max-width: 768px) {
