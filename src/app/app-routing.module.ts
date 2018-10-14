@@ -10,6 +10,7 @@ const appRoutes: Routes = [
         component: JobComponent,
         children: [{ path: 'job-application', component: JobApplicationComponent }],
     },
+    { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
