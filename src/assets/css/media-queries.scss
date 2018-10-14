@@ -12,20 +12,26 @@
         min-height: 94px !important;
         padding: 0 !important;
     }
-    .mobile-menu-area.d-none {
-        display: block !important;
-        min-height: 94px;
+    .mobile-menu-area {
+        &.d-none {
+            display: block !important;
+            min-height: 94px;
+        }
+        app-search {
+            max-width: calc(100% - 30px);
+            display: block;
+            margin: 0 auto;
+        }
     }
     .mobile-menu-content {
         min-height: 45px;
-    }
-    .header-area .navbar-brand {
-        position: absolute;
-        left: 70px;
+        .navbar-brand {
+            margin-left: 10px;
+        }
     }
     .briefcase-area {
         position: absolute;
-        right: 45px;
+        right: 15px;
         top: 15px;
     }
     .navbar-collapse .search-area {

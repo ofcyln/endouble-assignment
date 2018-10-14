@@ -12,29 +12,15 @@
                 </a>
             </section>
 
-            <a class="navbar-brand">
-                LOGO
-            </a>
+            <app-logo></app-logo>
 
-            <a
-                title="My Briefcase"
-                class="briefcase-area e-icon-briefcase cursor-pointer">
-                <sup class="job-count ml-1">1</sup>
-            </a>
+            <app-my-briefcase></app-my-briefcase>
         </section>
 
-        <form class="form-inline search-area col-12">
-            <input
-                class="form-control col-12"
-                type="search"
-                placeholder="SEARCH FOR JOBS BY KEYWORD"
-                aria-label="Search">
-        </form>
+        <app-search></app-search>
     </article>
 
-    <a class="navbar-brand d-none-lgt-sm">
-        LOGO
-    </a>
+    <app-logo ngClass="d-none-lgt-sm"></app-logo>
 
     <div
         class="collapse navbar-collapse"
@@ -62,18 +48,8 @@
             </li>
         </ul>
 
-        <form class="form-inline mr-5 my-lg-0 search-area">
-            <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="SEARCH FOR JOBS BY KEYWORD"
-                aria-label="Search">
-        </form>
+        <app-search ngClass="mr-5 my-lg-0"></app-search>
 
-        <a
-            title="My Briefcase"
-            class="briefcase-area e-icon-briefcase cursor-pointer">
-            <sup class="job-count ml-1">1</sup>
-        </a>
+        <app-my-briefcase></app-my-briefcase>
     </div>
 </header>
