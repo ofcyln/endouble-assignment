@@ -1,16 +1,7 @@
 <header class="navbar navbar-expand-lg navbar-dark header-area">
     <article class="mobile-menu-area d-none container-fluid">
         <section class="col-12 mobile-menu-content d-flex align-items-center mb-2">
-            <section class="hamburger-menu">
-                <a
-                    class="hamburger-trigger"
-                    appDropdown
-                    (click)="openNavigation()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
-            </section>
+            <app-hamburger-menu></app-hamburger-menu>
 
             <app-logo></app-logo>
 
@@ -25,7 +16,9 @@
     <div
         class="collapse navbar-collapse"
         id="navbarSupportedContent"
-        [ngClass]="{'active': isNavActive}">
+        [ngClass]="{'active': headerService.isNavActive}">
+        <app-hamburger-menu></app-hamburger-menu>
+
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link cursor-pointer">HOME</a>

@@ -8,6 +8,8 @@ import { SharedModule } from '../shared/shared.module';
 import { MyBriefcaseComponent } from './header/my-briefcase/my-briefcase.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { SearchComponent } from './header/search/search.component';
+import { HamburgerMenuComponent } from './header/hamburger-menu/hamburger-menu.component';
+import { HeaderService } from './header/header.service';
 
 @NgModule({
     declarations: [
@@ -16,9 +18,10 @@ import { SearchComponent } from './header/search/search.component';
         MyBriefcaseComponent,
         LogoComponent,
         SearchComponent,
+        HamburgerMenuComponent,
     ],
     imports: [CommonModule, SharedModule, AppRoutingModule],
-    providers: [],
+    providers: [HeaderService],
     exports: [AppRoutingModule, HeaderComponent, FooterComponent],
 })
 export class CoreModule {}
