@@ -38,10 +38,13 @@
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 813px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
     .d-none-lt-sm {
         display: none !important;
     }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 813px) {
     .footer-area {
         article {
             padding-left: 15px !important;
@@ -59,9 +62,9 @@
     }
     .job-header {
         figure {
-            padding: 40px 0 !important;
+            padding: 15px 0 !important;
             figcaption {
-                max-width: 80% !important;;
+                max-width: calc(100% - 30px) !important;;
             }
             h1 {
                 font-size: 34px !important;;
@@ -69,6 +72,14 @@
             h2 {
                 font-size: 21px !important;;
                 margin-top: -10px !important;;
+            }
+        }
+    }
+    .job-footer {
+        figure {
+            padding: 15px 0 !important;
+            figcaption {
+                max-width: calc(100% - 30px) !important;;
             }
         }
     }
