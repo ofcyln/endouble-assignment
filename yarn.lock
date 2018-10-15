@@ -367,6 +367,13 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/moment@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@types/moment/-/moment-2.13.0.tgz#604ebd189bc3bc34a1548689404e61a2a4aac896"
+  integrity sha1-YE69GJvDvDShVIaJQE5hoqSqyJY=
+  dependencies:
+    moment "*"
+
 "@types/node@^6.0.46":
   version "6.14.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.14.0.tgz#85c6998293fc6f2945915419296c7fbb63384f66"
@@ -4836,6 +4843,11 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+moment@*, moment@^2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+  integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4911,6 +4923,14 @@ neo-async@^2.5.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
   integrity sha512-vdqTKI9GBIYcAEbFAcpKPErKINfPF5zIuz3/niBfq8WUZjpT2tytLlFVrBgWdOtqI4uaA/Rb6No0hux39XXDuw==
+
+ng2-date-picker@^2.10.1:
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/ng2-date-picker/-/ng2-date-picker-2.10.2.tgz#7f8b45045519923dd6e4ea67aea5abb2ab8faca8"
+  integrity sha512-oiJqk3XX2WRVZu8tAhPhh0+LIbbO9Kqj+oqNKBbnv88DtaW2OACGBxN32E8Sxm/QQ9q/oB0grImahoS2SmZyBQ==
+  dependencies:
+    moment "^2.22.2"
+    tslib "^1.9.0"
 
 ngx-progressbar@^2.1.1:
   version "2.1.1"

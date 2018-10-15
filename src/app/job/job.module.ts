@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { JobComponent } from './job.component';
 import { JobApplicationComponent } from './job-application/job-application.component';
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
     declarations: [JobComponent, JobApplicationComponent],
-    imports: [CommonModule, FormsModule],
+    imports: [CommonModule, FormsModule, DpDatePickerModule],
 })
 export class JobModule {}

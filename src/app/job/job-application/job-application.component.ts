@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker';
 
 export interface Gender {
     man: string;
@@ -24,29 +25,39 @@ export interface FormValues {
     selector: 'app-job-application',
     templateUrl: './job-application.component.html',
     styleUrls: ['./job-application.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class JobApplicationComponent implements OnInit {
     @ViewChild('f')
     signupForm: NgForm;
 
     public submitted: boolean = false;
-
     public personalDetails: FormValues;
+
+    @ViewChild('dateDirectivePickerStart')
+    datePickerDirective: DatePickerDirective;
+
+    public datePickerConfig: IDatePickerDirectiveConfig;
+    public birthDate: string;
 
     constructor() {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.datePickerConfig = {
+            locale: 'en',
+            format: 'DD.MM.YYYY',
+            monthFormat: 'DD-MM-YYYY',
+            drops: 'down',
+            showGoToCurrent: false,
+        };
+    }
 
     onSubmit() {
         console.log(this.signupForm);
 
         this.submitted = true;
 
-        // this.personalDetails.username = this.signupForm.value.userData.username;
         // this.personalDetails.email = this.signupForm.value.userData.email;
-        // this.personalDetails.secret = this.signupForm.value.secret;
-        // this.personalDetails.answer = this.signupForm.value.questionAnswer;
-        // this.personalDetails.gender = this.signupForm.value.gender;
 
         this.signupForm.reset();
     }

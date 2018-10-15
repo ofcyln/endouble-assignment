@@ -170,5 +170,50 @@
                 cursor: not-allowed;
             }
         }
+        dp-date-picker {
+            position: absolute !important;
+        }
+        dp-day-calendar {
+            .dp-calendar-day {
+                width: 40px;
+                height: 40px;
+                margin: 3px;
+                font-size: 12px;
+                transition: all 0.2s ease-in-out;
+            }
+            &.dp-material {
+                .dp-calendar-wrapper {
+                    border: 0;
+                    border-top: 1px solid #d3d3d3;
+                    padding: 5px;
+                    .dp-weekdays {
+                        display: none;
+                    }
+                }
+                .dp-current-day {
+                    border: 1px solid #024877;
+                    background-color: #ececec;
+                }
+                .dp-selected {
+                    background: #58b45e !important;
+                }
+            }
+            dp-calendar-nav {
+                .dp-nav-header {
+                    font-size: 15px;
+                    font-weight: 900;
+                }
+                .dp-calendar-nav-left::before, .dp-calendar-nav-right::before {
+                    height: 10px;
+                    width: 10px;
+                }
+                &.dp-material .dp-calendar-nav-container {
+                    height: 35px;
+                    margin: 0 7px;
+                    border: 0;
+                }
+            }
+
+        }
     }
 }
