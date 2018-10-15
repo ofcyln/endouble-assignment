@@ -62,45 +62,35 @@
                                     name="monthPickerStart"
                                     ngModel
                                     tabindex="3"
-                                    placeholder="Date of birth (DD-MM-YYYY)"
+                                    placeholder="Date of birth (DD.MM.YYYY)"
                                     #dateOfBirth="ngModel"
                                     [dpDayPicker]="datePickerConfig"
                                     required
                                     birthDate
                                     theme="dp-material">
 
-                                <!--<input-->
-                                    <!--type="date"-->
-                                    <!--id="dateOfBirth"-->
-                                    <!--class="form-control"-->
-                                    <!--ngModel=""-->
-                                    <!--name="dateOfBirth"-->
-                                    <!--placeholder="Date of birth"-->
-                                    <!--tabindex="3"-->
-                                    <!--required-->
-                                    <!--#dateOfBirth="ngModel">-->
-
                                 <span
                                     *ngIf="dateOfBirth.valid && dateOfBirth.touched"
                                     class="e-icon-ok valid-checkmark"></span>
                             </div>
 
-                            <div class="form-group mb-20px col-12 col-md-6">
-                                <input
-                                    type="text"
-                                    id="gender"
-                                    class="form-control"
-                                    ngModel=""
-                                    name="gender"
-                                    placeholder="Gender"
-                                    tabindex="4"
-                                    required
-                                    gender
-                                    #gender="ngModel">
+                            <div
+                                class="form-group mb-20px col-12 col-md-6">
+                                <div class="dropdown">
+                                    <select
+                                        class="custom-select"
+                                        type="button"
+                                        id="gender"
+                                        name="gender"
+                                        tabindex="4"
+                                        gender>
+                                        <option selected disabled>Gender</option>
+                                        <option value="man">Man</option>
+                                        <option value="women">Woman</option>
+                                        <option value="notToDisclose">Not to disclose</option>
+                                    </select>
 
-                                <span
-                                    *ngIf="gender.valid && gender.touched"
-                                    class="e-icon-ok valid-checkmark"></span>
+                                </div>
                             </div>
                         </div>
                     </div>

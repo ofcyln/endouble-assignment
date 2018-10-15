@@ -45,8 +45,8 @@ export class JobApplicationComponent implements OnInit {
     ngOnInit() {
         this.datePickerConfig = {
             locale: 'en',
-            format: 'DD-MM-YYYY',
-            monthFormat: 'DD-MM-YYYY',
+            format: 'DD.MM.YYYY',
+            monthFormat: 'DD.MM.YYYY',
             drops: 'down',
             showGoToCurrent: false,
         };
