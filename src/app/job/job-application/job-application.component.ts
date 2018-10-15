@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker';
+import { DropboxChooserService } from './dropbox-chooser.service';
 
 export interface Gender {
     man: string;
@@ -38,9 +39,15 @@ export class JobApplicationComponent implements OnInit {
     public personalDetails: FormValues;
 
     public datePickerConfig: IDatePickerDirectiveConfig;
-    public birthDate: string;
 
-    constructor() {}
+    public resumeDropboxLink: string = '';
+    public portfolioDropboxLink: string = '';
+    public photoDropboxLink: string = '';
+
+    private readonly DOCUMENT_EXTENSIONS = ['.docx', '.doc', '.pdf', '.txt', '.rtf'];
+    private readonly IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg'];
+
+    constructor(private dropboxChooserService: DropboxChooserService) {}
 
     ngOnInit() {
         this.datePickerConfig = {
@@ -52,13 +59,43 @@ export class JobApplicationComponent implements OnInit {
         };
     }
 
-    onSubmit() {
-        console.log(this.signupForm);
+    chooseResume() {
+        this.dropboxChooserService.choose(this.DOCUMENT_EXTENSIONS).subscribe(
+            (link: string) => {
+                this.resumeDropboxLink = link;
+            },
+            (error: string) => {
+                console.log(error);
+            },
+        );
+    }
 
+    choosePortfolio() {
+        this.dropboxChooserService.choose(this.DOCUMENT_EXTENSIONS).subscribe(
+            (link: string) => {
+                this.portfolioDropboxLink = link;
+            },
+            (error: string) => {
+                console.log(error);
+            },
+        );
+    }
+
+    choosePhoto() {
+        this.dropboxChooserService.choose(this.IMAGE_EXTENSIONS).subscribe(
+            (link: string) => {
+                this.photoDropboxLink = link;
+            },
+            (error: string) => {
+                console.log(error);
+            },
+        );
+    }
+
+    onSubmit() {
         this.submitted = true;
 
-        // this.personalDetails.email = this.signupForm.value.userData.email;
-
-        this.signupForm.reset();
+        console.log(this.signupForm);
+        // this.signupForm.reset();
     }
 }

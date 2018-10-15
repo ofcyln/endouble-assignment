@@ -80,10 +80,11 @@
                                     <select
                                         class="custom-select"
                                         type="button"
+                                        ngModelGroup
+                                        #gender="ngModelGroup"
                                         id="gender"
                                         name="gender"
-                                        tabindex="4"
-                                        gender>
+                                        tabindex="4">
                                         <option selected disabled>Gender</option>
                                         <option value="man">Man</option>
                                         <option value="women">Woman</option>
@@ -225,8 +226,8 @@
 
                 <section
                     id="userFiles"
-                    ngModelGroup="personalFiles"
-                    #personalFiles="ngModelGroup"
+                    ngModelGroup="attachments"
+                    #attachments="ngModelGroup"
                     class="row">
 
                     <div class="col-12 col-md-6">
@@ -302,14 +303,15 @@
                                             <span class="upload-element-text">UPLOAD</span>
 
                                             <input
-                                                type="file"
+                                                type="text"
                                                 id="uploadResumeDropbox"
                                                 class="form-control d-none"
-                                                ngModel=""
+                                                [(ngModel)]="resumeDropboxLink"
                                                 name="uploadResumeDropbox"
                                                 tabindex="13"
                                                 uploadResumeDropbox
-                                                #uploadResumeDropbox="ngModel">
+                                                #uploadResumeDropbox="ngModel"
+                                                (click)="chooseResume()">
                                         </label>
                                     </div>
                                 </div>
@@ -359,13 +361,14 @@
                                             <span class="upload-element-text">UPLOAD</span>
 
                                             <input
-                                                type="file"
+                                                type="text"
                                                 id="uploadPortfolioDropbox"
                                                 class="form-control d-none"
-                                                ngModel=""
+                                                [(ngModel)]="portfolioDropboxLink"
                                                 name="uploadPortfolioDropbox"
                                                 tabindex="15"
-                                                #uploadPortfolioDropbox="ngModel">
+                                                #uploadPortfolioDropbox="ngModel"
+                                                (click)="choosePortfolio()">
                                         </label>
                                     </div>
                                 </div>
@@ -416,14 +419,15 @@
                                             <span class="upload-element-text">UPLOAD</span>
 
                                             <input
-                                                type="file"
+                                                type="text"
                                                 id="uploadPhotoDropbox"
                                                 class="form-control d-none"
-                                                ngModel=""
+                                                [(ngModel)]="photoDropboxLink"
                                                 name="uploadPhotoDropbox"
                                                 tabindex="13"
                                                 uploadPhotoDropbox
-                                                #uploadPhotoDropbox="ngModel">
+                                                #uploadPhotoDropbox="ngModel"
+                                                (click)="choosePhoto()">
                                         </label>
                                     </div>
                                 </div>
@@ -433,7 +437,7 @@
 
                     <p
                         *ngIf="(!personalData.valid && personalData.touched) ||
-                        (!personalFiles.valid && personalFiles.touched)"
+                        (!attachments.valid && attachments.touched)"
                         class="col-12 mb-20px error-text">Please fill the missing field(s) in the form!</p>
                 </section>
 
