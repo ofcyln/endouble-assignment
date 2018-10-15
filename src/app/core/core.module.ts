@@ -10,6 +10,7 @@ import { LogoComponent } from './header/logo/logo.component';
 import { SearchComponent } from './header/search/search.component';
 import { HamburgerMenuComponent } from './header/hamburger-menu/hamburger-menu.component';
 import { HeaderService } from './header/header.service';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,7 @@ import { HeaderService } from './header/header.service';
         SearchComponent,
         HamburgerMenuComponent,
     ],
-    imports: [CommonModule, SharedModule, AppRoutingModule],
+    imports: [CommonModule, SharedModule, AppRoutingModule, ScrollToModule.forRoot()],
     providers: [HeaderService],
     exports: [AppRoutingModule, HeaderComponent, FooterComponent],
 })
