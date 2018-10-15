@@ -2,6 +2,476 @@
     <div class="col job-application-area">
         <div class="job-form">
             <h2 class="font-yanone-bold">APPLY FOR THE POSITION OF PURCHASING ASSISTANT</h2>
+            <form
+                (ngSubmit)="onSubmit()"
+                #f="ngForm"
+                class="application-details">
+                <section
+                    id="userDetails"
+                    ngModelGroup="personalData"
+                    #personalData="ngModelGroup"
+                    class="row mb-20px">
+                    <p class="col-12 mb-20px info-text">Personal Details *</p>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="firstName"
+                                    placeholder="First name"
+                                    minlength="2"
+                                    tabindex="1"
+                                    required
+                                    #firstName="ngModel">
+
+                                <span
+                                    *ngIf="firstName.valid && firstName.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="lastName"
+                                    placeholder="Last name"
+                                    minlength="2"
+                                    tabindex="2"
+                                    required
+                                    lastName
+                                    #lastName="ngModel">
+
+                                <span
+                                    *ngIf="lastName.valid && lastName.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="date"
+                                    id="dateOfBirth"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="dateOfBirth"
+                                    placeholder="Date of birth"
+                                    tabindex="3"
+                                    required
+                                    #dateOfBirth="ngModel">
+
+                                <span
+                                    *ngIf="dateOfBirth.valid && dateOfBirth.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="gender"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="gender"
+                                    placeholder="Gender"
+                                    tabindex="4"
+                                    required
+                                    gender
+                                    #gender="ngModel">
+
+                                <span
+                                    *ngIf="gender.valid && gender.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="email"
+                                    placeholder="Email"
+                                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                    tabindex="5"
+                                    required
+                                    email
+                                    #email="ngModel">
+
+                                <span
+                                    *ngIf="email.valid && email.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="phone"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="phone"
+                                    placeholder="Phone number"
+                                    tabindex="6"
+                                    minlength="7"
+                                    required
+                                    phone
+                                    #phone="ngModel">
+
+                                <span
+                                    *ngIf="phone.valid && phone.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="address"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="address"
+                                    placeholder="Address"
+                                    tabindex="7"
+                                    required
+                                    address
+                                    #address="ngModel">
+
+                                <span
+                                    *ngIf="address.valid && address.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="tel"
+                                    id="houseNumber"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="houseNumber"
+                                    placeholder="House number"
+                                    tabindex="8"
+                                    required
+                                    houseNumber
+                                    #houseNumber="ngModel">
+
+                                <span
+                                    *ngIf="houseNumber.valid && houseNumber.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="zipCode"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="zipCode"
+                                    placeholder="Zip code"
+                                    tabindex="9"
+                                    pattern="^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$"
+                                    required
+                                    zipCode
+                                    #zipCode="ngModel">
+
+                                <span
+                                    *ngIf="zipCode.valid && zipCode.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+
+                                <p
+                                    *ngIf="!zipCode.valid && zipCode.touched"
+                                    class="error-text">This is not a valid Dutch zip code!</p>
+                            </div>
+
+                            <div class="form-group mb-20px col-12 col-md-6">
+                                <input
+                                    type="text"
+                                    id="country"
+                                    class="form-control"
+                                    ngModel=""
+                                    name="country"
+                                    placeholder="Country"
+                                    tabindex="10"
+                                    required
+                                    country
+                                    #country="ngModel">
+
+                                <span
+                                    *ngIf="country.valid && country.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="userFiles"
+                    ngModelGroup="personalFiles"
+                    #personalFiles="ngModelGroup"
+                    class="row">
+
+                    <div class="col-12 col-md-6">
+                        <p class="col-12 mb-20px info-text no-padding">Your Motivation</p>
+
+                        <div class="row">
+                            <div class="form-group mb-20px col-12">
+                                <textarea
+                                    type="text"
+                                    id="motivation"
+                                    class="form-control"
+                                    rows="6"
+                                    ngModel=""
+                                    name="motivation"
+                                    placeholder="Motivation"
+                                    tabindex="11"
+                                    required
+                                    #motivation="ngModel"></textarea>
+
+                                <span
+                                    *ngIf="motivation.valid && motivation.touched"
+                                    class="e-icon-ok valid-checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 upload-area">
+                        <p class="col-12 mb-20px info-text no-padding">
+                            Attach your documents <small>(pdf, doc(x), jpg max. 4 Mb)</small>
+                        </p>
+
+                        <div class="row">
+                            <div class="col-12 padding-modifier">
+                                <div class="row mb-10px align-items-center">
+                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                        Resume *
+                                        <span
+                                            *ngIf="(uploadResume.valid && uploadResume.touched) ||
+                                            (uploadResumeDropbox.valid && uploadResumeDropbox.touched)"
+                                            class="e-icon-ok valid-checkmark"></span>
+                                    </p>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Resume file upload">
+
+                                            <span class="e-icon-monitor upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadResume"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadResume"
+                                                tabindex="12"
+                                                uploadResume
+                                                #uploadResume="ngModel">
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Dropbox resume file upload">
+
+                                            <span class="e-icon-dropbox upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadResumeDropbox"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadResumeDropbox"
+                                                tabindex="13"
+                                                uploadResumeDropbox
+                                                #uploadResumeDropbox="ngModel">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 padding-modifier">
+                                <div class="row mb-10px align-items-center">
+                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                        Portfolio
+                                        <span
+                                            *ngIf="(uploadPortfolio.valid && uploadPortfolio.touched) ||
+                                            (uploadPortfolioDropbox.valid && uploadPortfolioDropbox.touched)"
+                                            class="e-icon-ok valid-checkmark"></span>
+                                    </p>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Portfolio file upload">
+
+                                            <span class="e-icon-monitor upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadPortfolio"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadPortfolio"
+                                                tabindex="14"
+                                                #uploadPortfolio="ngModel">
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Dropbox portfolio file upload">
+
+                                            <span class="e-icon-dropbox upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadPortfolioDropbox"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadPortfolioDropbox"
+                                                tabindex="15"
+                                                #uploadPortfolioDropbox="ngModel">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 padding-modifier">
+                                <div class="row mb-10px align-items-center">
+                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                        Photo
+                                        <span
+                                            *ngIf="(uploadPhoto.valid && uploadPhoto.touched) ||
+                                            (uploadPhotoDropbox.valid && uploadPhotoDropbox.touched)"
+                                            class="e-icon-ok valid-checkmark"></span>
+                                    </p>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Photo upload">
+
+                                            <span class="e-icon-monitor upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadPhoto"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadPhoto"
+                                                tabindex="12"
+                                                uploadPhoto
+                                                #uploadPhoto="ngModel">
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                        <label
+                                            class="btn btn-upload btn-block no-margin"
+                                            role="group"
+                                            aria-label="Dropbox photo upload">
+
+                                            <span class="e-icon-dropbox upload-element-icon"></span>
+
+                                            <span class="upload-element-text">UPLOAD</span>
+
+                                            <input
+                                                type="file"
+                                                id="uploadPhotoDropbox"
+                                                class="form-control d-none"
+                                                ngModel=""
+                                                name="uploadPhotoDropbox"
+                                                tabindex="13"
+                                                uploadPhotoDropbox
+                                                #uploadPhotoDropbox="ngModel">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p
+                        *ngIf="(!personalData.valid && personalData.touched) &&
+                        (!personalFiles.valid && personalFiles.touched)"
+                        class="col-12 mb-20px error-text">Please fill the missing field(s) in the form!</p>
+                </section>
+
+                <section class="row align-items-center submit-area">
+                    <div class="col-12 col-md-6 back-to-description">
+                        <div class="row">
+                            <a class="col-12 cursor-pointer" routerLink="/">
+                                < Back to job description
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row align-items-center">
+                                    <div class="col-12 col-sm-4 col-md-4 mt-1">
+                                        <input
+                                            class="custom-checkbox"
+                                            id="customCheckbox"
+                                            type="checkbox"
+                                            value="checkbox">
+                                        <label
+                                            for="customCheckbox"
+                                            class="custom-checkbox-label">Send me a copy</label>
+                                    </div>
+
+                                    <div class="col-12 col-sm-8 col-md-8 submit-button-area">
+                                        <button
+                                            class="btn btn-upload col-12"
+                                            type="submit"
+                                            [disabled]="!f.valid">APPLY FOR THIS JOB
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
         </div>
     </div>
 </section>

@@ -4,7 +4,7 @@
     position: relative;
     article {
         max-width: 948px;
-        padding-top: 20px;
+        padding: 20px 15px;
         margin: 30px auto;
         border-top: 1px solid #eaeaea;
         h3 {
@@ -53,6 +53,7 @@
         padding: 15px 30px;
         background-color: #fff;
         transition: all ease-in-out 0.1s;
+        z-index: 2;
         &:before {
             content: '';
             width: 0;

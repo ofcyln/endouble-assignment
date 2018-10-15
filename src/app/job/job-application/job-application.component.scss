@@ -9,5 +9,166 @@
             font-size: 50px;
             margin-bottom: 60px;
         }
+        .application-details {
+            input, textarea {
+                &.form-control {
+                    border-radius: 0;
+                    border: 1px solid #e9e9e9;
+                    font-size: 13px;
+                    color: #01385f;
+                    font-weight: 700;
+                    padding-right: 35px;
+                    position: relative;
+                    resize: none;
+                    &:focus {
+                        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+                    }
+                }
+                &.ng-invalid.ng-touched {
+                    border: 1px solid #c80000;
+                    color: #c80000;
+                }
+                &::-webkit-input-placeholder {
+                    color: #c1c1c1;
+                }
+                &::-moz-placeholder {
+                    color: #c1c1c1;
+                }
+                &:-ms-input-placeholder {
+                    color: #c1c1c1;
+                }
+                &:-moz-placeholder {
+                    color: #c1c1c1;
+                }
+            }
+            .valid-checkmark {
+                position: absolute;
+                top: 8px;
+                right: 23px;
+                color: #01385f;
+            }
+            .mb-10px {
+                margin-bottom: 10px
+            }
+            .mb-20px {
+                margin-bottom: 20px
+            }
+            .info-text {
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .error-text {
+                font-size: 13px;
+                color: #c80000;
+                margin-bottom: 0;
+            }
+        }
+        .back-to-description {
+            a {
+                color: #bebebe;
+                font-size: 13px;
+            }
+        }
+        .upload-area {
+            p {
+                font-size: 13px;
+                font-weight: 700;
+                position: relative;
+                .valid-checkmark {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    color: #01385f;
+                }
+            }
+            .upload-heading {
+                padding-left: 5px;
+            }
+            .padding-modifier {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .upload-element {
+                padding-left: 5px;
+                padding-right: 5px;
+                .upload-element-icon {
+                    margin-right: 5px;
+                }
+                .upload-element-text {
+                    font-size: 13px;
+                }
+            }
+        }
+        .submit-area {
+            margin-top: 60px;
+            .custom-checkbox {
+                position: absolute;
+                opacity: 0;
+                & + label {
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+                    user-select: none;
+                    &:before {
+                        content: '';
+                        margin-right: 10px;
+                        display: block;
+                        float: left;
+                        vertical-align: text-top;
+                        width: 17px;
+                        height: 17px;
+                        background: white;
+                        border: 1px solid #cecece;
+                    }
+                }
+                &:checked {
+                    & + label:after {
+                        content: '\e800';
+                        display: inline-block;
+                        position: absolute;
+                        left: 3px;
+                        top: 1px;
+                        font-family: "fontello";
+                        font-size: 11px;
+                        text-align: center;
+                        color: #656565;
+                        font-style: normal;
+                        font-weight: normal;
+                        width: 1em;
+                        margin-right: 5px;
+                        speak: none;
+                        text-decoration: inherit;
+                    }
+                }
+            }
+            .custom-checkbox-label {
+                font-size: 13px;
+                color: #666;
+                padding-left: 5px;
+            }
+            .submit-button-area {
+                padding-left: 10px;
+                button {
+                    font-size: 13px;
+                }
+            }
+        }
+        .btn-upload {
+            color: #fff;
+            background-color: #005c9d;
+            border-color: #005c9d;
+            border-radius: 0;
+            &:hover, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+                color: #fff;
+                background-color: #054b7d;
+                border-color: #054b7d;
+            }
+            &.focus, &:focus {
+                box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
+            }
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
     }
 }

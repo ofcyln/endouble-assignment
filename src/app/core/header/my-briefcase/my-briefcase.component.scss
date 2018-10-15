@@ -2,8 +2,9 @@
     .navbar-collapse {
         .briefcase-area {
             position: relative;
+            color: #d3d3d3;
             &:hover {
-                color: #d3d3d3;
+                color: #fff;
                 &:after {
                     display: block;
                 }
@@ -16,15 +17,16 @@
             }
             &:after {
                 display: none;
-                content: attr(title);
+                content: attr(aria-label);
                 position: absolute;
+                margin-top: 4px;
                 top: 100%;
                 right: 50%;
                 z-index: 1;
                 padding: 5px 10px;
-                background: #3a3a3a;
+                background: #ffffff;
                 box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.35);
-                color: #ffffff;
+                color: #000000;
                 font-size: 10px;
                 white-space: nowrap;
                 pointer-events: none;

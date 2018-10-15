@@ -43,16 +43,6 @@
             display: block !important;
             &.active {
                 transform: none;
-                &:before {
-                    content: '';
-                    position: fixed;
-                    top: 0;
-                    right: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0,0,0,0.3);
-                    z-index: -1;
-                }
             }
             .briefcase-area {
                 display: none !important;
@@ -110,11 +100,19 @@
             right: 18px!important;
         }
     }
+    .footer-area {
+        section {
+            margin-bottom: 20px !important;
+        }
+    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .d-none-lt-sm {
         display: none !important;
+    }
+    .submit-area, .custom-checkbox-label {
+        margin-top: 20px !important;
     }
 }
 
@@ -123,9 +121,8 @@
         article {
             padding-left: 15px !important;
             padding-right: 15px !important;
-        }
-        section {
-            margin-top: 10px !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
         }
     }
     .footer-bottom-area {
@@ -141,6 +138,7 @@
             h2 {
                 font-size: 22px !important;
                 margin-bottom: 15px !important;
+                margin-top: 10px !important;
             }
         }
     }
@@ -166,6 +164,15 @@
                 max-width: calc(100% - 30px) !important;;
             }
         }
+    }
+    .back-to-description {
+        order: 13;
+    }
+    .submit-area {
+        order: -1;
+    }
+    .submit-button-area {
+        margin-bottom: 15px;
     }
 }
 
