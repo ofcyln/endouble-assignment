@@ -146,14 +146,14 @@
         figure {
             padding: 15px 0 !important;
             figcaption {
-                max-width: calc(100% - 30px) !important;;
+                max-width: calc(100% - 30px) !important;
             }
             h1 {
-                font-size: 34px !important;;
+                font-size: 34px !important;
             }
             h2 {
-                font-size: 21px !important;;
-                margin-top: -10px !important;;
+                font-size: 21px !important;
+                margin-top: -10px !important;
             }
         }
     }
@@ -161,7 +161,7 @@
         figure {
             padding: 15px 0 !important;
             figcaption {
-                max-width: calc(100% - 30px) !important;;
+                max-width: calc(100% - 30px) !important;
             }
         }
     }
@@ -173,6 +173,13 @@
     }
     .submit-button-area {
         margin-bottom: 15px;
+    }
+    dp-day-calendar {
+        .dp-calendar-day {
+            width: 35px !important;;
+            height: 35px !important;;
+            margin: 2px !important;;
+        }
     }
 }
 
