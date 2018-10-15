@@ -1,3 +1,3 @@
 # Endouble - Assignment -> in progress...
 
-I overcomplicated the structure to show my Angular, SCSS skills. Projects is still ongoing and will be finish shortly.
+I overcomplicated the structure to show my Angular skills. Projects is still ongoing and will be finish shortly.
