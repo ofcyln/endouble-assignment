@@ -432,7 +432,7 @@
                     </div>
 
                     <p
-                        *ngIf="(!personalData.valid && personalData.touched) &&
+                        *ngIf="(!personalData.valid && personalData.touched) ||
                         (!personalFiles.valid && personalFiles.touched)"
                         class="col-12 mb-20px error-text">Please fill the missing field(s) in the form!</p>
                 </section>
