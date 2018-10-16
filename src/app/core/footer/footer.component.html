@@ -8,18 +8,18 @@
     <article class="row">
         <section class="col-6 col-lg-3 no-padding d-none-lt-sm">
             <h3 class="col-12 no-padding">JOBS AT</h3>
-            <a routerLink="/" class="d-flex cursor-pointer">Home</a>
-            <a routerLink="/" class="d-flex cursor-pointer active">Jobs</a>
-            <a routerLink="/" class="d-flex cursor-pointer">About</a>
-            <a routerLink="/" class="d-flex cursor-pointer">Department</a>
+            <a aria-label="Home" class="d-flex cursor-pointer">Home</a>
+            <a routerLink="/" aria-label="Jobs" class="d-flex cursor-pointer active">Jobs</a>
+            <a routerLink="/" aria-label="About" class="d-flex cursor-pointer">About</a>
+            <a routerLink="/" aria-label="Department" class="d-flex cursor-pointer">Department</a>
         </section>
 
         <section class="col-6 col-lg-3 no-padding d-none-lt-sm">
             <h3 class="col-12 no-padding">INFORMATION</h3>
-            <a routerLink="/" class="d-flex cursor-pointer">F.A.Q.</a>
-            <a routerLink="/" class="d-flex cursor-pointer">Application process</a>
-            <a routerLink="/" class="d-flex cursor-pointer">Privacy policy</a>
-            <a routerLink="/" class="d-flex cursor-pointer">Contact</a>
+            <a routerLink="/" aria-label="F.A.Q." class="d-flex cursor-pointer">F.A.Q.</a>
+            <a routerLink="/" aria-label="Application process" class="d-flex cursor-pointer">Application process</a>
+            <a routerLink="/" aria-label="Privacy policy" class="d-flex cursor-pointer">Privacy policy</a>
+            <a routerLink="/" aria-label="Contact" class="d-flex cursor-pointer">Contact</a>
         </section>
 
         <section class="col-12 col-lg-3 no-padding">
@@ -33,15 +33,15 @@
                         target="_blank"
                         class="d-flex align-items-center no-margin">
                         <span class="e-icon-{{shareElement.icon}} footer-icon"></span>
-                        <a class="d-flex cursor-pointer col no-margin footer-icon-info">{{ shareElement.name }}</a>
+                        <p class="d-flex cursor-pointer col no-margin footer-icon-info">{{ shareElement.name }}</p>
                     </a>
                 </div>
             </div>
         </section>
 
         <section class="col-12 col-lg-3 no-padding">
-            <h3 routerLink="/" class="col-12 no-padding">JOB ALERT</h3>
-            <a routerLink="/" class="d-flex cursor-pointer">Subscribe to our job alert</a>
+            <h3 routerLink="/" aria-label="JOB ALERT" class="col-12 no-padding">JOB ALERT</h3>
+            <a routerLink="/" aria-label="Subscribe to our job alert" class="d-flex cursor-pointer">Subscribe to our job alert</a>
         </section>
     </article>
 

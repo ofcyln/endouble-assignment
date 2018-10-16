@@ -25,6 +25,7 @@
                                     placeholder="First name"
                                     minlength="2"
                                     tabindex="1"
+                                    aria-required="true"
                                     required
                                     #firstName="ngModel">
 
@@ -43,6 +44,7 @@
                                     placeholder="Last name"
                                     minlength="2"
                                     tabindex="2"
+                                    aria-required="true"
                                     required
                                     lastName
                                     #lastName="ngModel">
@@ -65,6 +67,7 @@
                                     placeholder="Date of birth (DD.MM.YYYY)"
                                     #dateOfBirth="ngModel"
                                     [dpDayPicker]="datePickerConfig"
+                                    aria-required="true"
                                     required
                                     birthDate
                                     theme="dp-material">
@@ -108,6 +111,7 @@
                                     placeholder="Email"
                                     pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                                     tabindex="5"
+                                    aria-required="true"
                                     required
                                     email
                                     #email="ngModel">
@@ -127,6 +131,7 @@
                                     placeholder="Phone number"
                                     tabindex="6"
                                     minlength="7"
+                                    aria-required="true"
                                     required
                                     phone
                                     #phone="ngModel">
@@ -149,6 +154,7 @@
                                     name="address"
                                     placeholder="Address"
                                     tabindex="7"
+                                    aria-required="true"
                                     required
                                     address
                                     #address="ngModel">
@@ -167,6 +173,7 @@
                                     name="houseNumber"
                                     placeholder="House number"
                                     tabindex="8"
+                                    aria-required="true"
                                     required
                                     houseNumber
                                     #houseNumber="ngModel">
@@ -190,6 +197,7 @@
                                     placeholder="Zip code"
                                     tabindex="9"
                                     pattern="^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$"
+                                    aria-required="true"
                                     required
                                     zipCode
                                     #zipCode="ngModel">
@@ -212,6 +220,7 @@
                                     name="country"
                                     placeholder="Country"
                                     tabindex="10"
+                                    aria-required="true"
                                     required
                                     country
                                     #country="ngModel">
@@ -244,6 +253,7 @@
                                     name="motivation"
                                     placeholder="Motivation"
                                     tabindex="11"
+                                    aria-required="true"
                                     required
                                     #motivation="ngModel"></textarea>
 
@@ -273,7 +283,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Resume file upload">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
@@ -295,7 +304,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Dropbox resume file upload">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
@@ -332,7 +340,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Portfolio file upload">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
@@ -353,7 +360,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Dropbox portfolio file upload">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
@@ -389,7 +395,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Photo upload">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
@@ -411,7 +416,6 @@
                                     <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            role="group"
                                             aria-label="Dropbox photo upload">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
@@ -434,14 +438,15 @@
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <section class="row align-items-center submit-area">
 
                     <p
                         *ngIf="(!personalData.valid && personalData.touched) ||
                         (!attachments.valid && attachments.touched)"
-                        class="col-12 mb-20px error-text">Please fill the missing field(s) in the form!</p>
-                </section>
+                        class="col-12 mb-20px error-text pre-submit-error">Please fill all the missing field(s) in the form to submit!</p>
 
-                <section class="row align-items-center submit-area">
                     <div class="col-12 col-md-6 back-to-description">
                         <div class="row">
                             <a class="col-12 cursor-pointer" routerLink="/">
@@ -462,7 +467,8 @@
                                             value="checkbox">
                                         <label
                                             for="customCheckbox"
-                                            class="custom-checkbox-label">Send me a copy</label>
+                                            class="custom-checkbox-label"
+                                            aria-label="Send me a copy">Send me a copy</label>
                                     </div>
 
                                     <div class="col-12 col-sm-8 col-md-8 submit-button-area">
