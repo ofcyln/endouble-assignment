@@ -4,6 +4,7 @@ import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker
 import { DropboxChooserService } from './dropbox-chooser.service';
 import { UploaderOptions, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
 import { AlertService } from '../../core/alert/alert.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface Gender {
     man: string;
@@ -62,6 +63,8 @@ export class JobApplicationComponent implements OnInit {
     constructor(
         private dropboxChooserService: DropboxChooserService,
         private alertService: AlertService,
+        private router: Router,
+        private route: ActivatedRoute,
     ) {}
 
     ngOnInit() {
@@ -172,6 +175,8 @@ export class JobApplicationComponent implements OnInit {
         this.submitted = true;
 
         console.log(this.signupForm);
+
+        this.router.navigate(['/job/success']);
         // this.signupForm.reset();
     }
 }
