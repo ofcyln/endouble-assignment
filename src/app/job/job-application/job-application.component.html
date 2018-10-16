@@ -59,7 +59,7 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     class="form-control date-picker"
-                                    name="monthPickerStart"
+                                    name="birthDate"
                                     ngModel
                                     tabindex="3"
                                     placeholder="Date of birth (DD.MM.YYYY)"
@@ -266,7 +266,7 @@
                         <div class="row">
                             <div class="col-12 padding-modifier">
                                 <div class="row mb-10px align-items-center">
-                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                    <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Resume *
                                         <span
                                             *ngIf="(uploadResume.valid && uploadResume.touched) ||
@@ -274,7 +274,7 @@
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Resume file upload">
@@ -299,7 +299,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox resume file upload">
@@ -327,7 +327,7 @@
                         <div class="row">
                             <div class="col-12 padding-modifier">
                                 <div class="row mb-10px align-items-center">
-                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                    <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Portfolio
                                         <span
                                             *ngIf="(uploadPortfolio.valid && uploadPortfolio.touched) ||
@@ -335,7 +335,7 @@
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Portfolio file upload">
@@ -355,7 +355,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox portfolio file upload">
@@ -382,7 +382,7 @@
                         <div class="row">
                             <div class="col-12 padding-modifier">
                                 <div class="row mb-10px align-items-center">
-                                    <p class="col-12 col-sm-4 col-md-4 no-margin upload-heading">
+                                    <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Photo
                                         <span
                                             *ngIf="(uploadPhoto.valid && uploadPhoto.touched) ||
@@ -390,7 +390,7 @@
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Photo upload">
@@ -411,7 +411,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="col-6 col-sm-4 col-md-4 align-items-center upload-element">
+                                    <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox photo upload">

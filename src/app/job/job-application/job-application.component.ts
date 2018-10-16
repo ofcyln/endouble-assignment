@@ -16,7 +16,7 @@ export interface FormValues {
         gender: 'Gender';
         houseNumber: string;
         lastName: string;
-        monthPickerStart: string;
+        birthDate: string;
         phone: string;
         zipCode: string;
     };
