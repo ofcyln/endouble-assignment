@@ -296,8 +296,12 @@
                                                 ngModel=""
                                                 name="uploadResume"
                                                 tabindex="12"
-                                                uploadResume
-                                                #uploadResume="ngModel">
+                                                #uploadResume="ngModel"
+                                                ngFileSelect
+                                                [options]="ngxUploaderOptions"
+                                                (uploadOutput)="onUploadOutput($event)"
+                                                [uploadInput]="uploadInput"
+                                                (click)="startUpload()">
                                         </label>
                                     </div>
 

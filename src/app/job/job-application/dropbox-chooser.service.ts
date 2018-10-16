@@ -29,18 +29,18 @@ export class DropboxChooserService {
         multiselect: false, // or true
 
         // Optional. This is a list of file extensions. If specified, the user will
-        // only be able to select files with these extensions. You may also specify
+        // only be able to select uploadingFiles with these extensions. You may also specify
         // file types, such as "video" or "images" in the list. For more information,
         // see File types below. By default, all extensions are allowed.
         extensions: ['.pdf', '.doc', '.docx'],
 
-        // Optional. A value of false (default) limits selection to files,
-        // while true allows the user to select both folders and files.
+        // Optional. A value of false (default) limits selection to uploadingFiles,
+        // while true allows the user to select both folders and uploadingFiles.
         // You cannot specify `linkType: "direct"` when using `folderselect: true`.
         folderselect: false, // or true
 
         // Optional. A limit on the size of each file that may be selected, in bytes.
-        // If specified, the user will only be able to select files with size
+        // If specified, the user will only be able to select uploadingFiles with size
         // less than or equal to this limit.
         // For the purposes of this option, folders have size zero.
         sizeLimit: 4e6, // or any positive number

@@ -11,6 +11,7 @@ import { SearchComponent } from './header/search/search.component';
 import { HamburgerMenuComponent } from './header/hamburger-menu/hamburger-menu.component';
 import { HeaderService } from './header/header.service';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { AlertModule } from './alert/alert.module';
 
 @NgModule({
     declarations: [
@@ -21,8 +22,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
         SearchComponent,
         HamburgerMenuComponent,
     ],
-    imports: [CommonModule, SharedModule, AppRoutingModule, ScrollToModule.forRoot()],
+    imports: [CommonModule, SharedModule, AppRoutingModule, ScrollToModule.forRoot(), AlertModule],
     providers: [HeaderService],
-    exports: [AppRoutingModule, HeaderComponent, FooterComponent],
+    exports: [AppRoutingModule, HeaderComponent, FooterComponent, AlertModule],
 })
 export class CoreModule {}

@@ -1,0 +1,42 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    max-height: 90px;
+    overflow: hidden;
+    overflow-y: auto;
+    .alert-dismissable {
+        div {
+            text-align: center;
+        }
+    }
+    .alert {
+        padding: 7px 15px;
+        margin-bottom: 20px;
+        border-radius: 0;
+        font-size: 14px;
+    }
+    .alert-danger {
+        color: #ffffff;
+        background-color: #c80000;
+        border-color: #c80000;
+    }
+    .alert-success {
+        color: #fff;
+        background-color: #42af5c;
+        border-color: #42af5c;
+    }
+    .close {
+        opacity: 0.6;
+        cursor: pointer;
+        text-shadow: none;
+        margin: 0 15px;
+        color: #fff !important;
+        transition: all ease-in-out 0.1s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
