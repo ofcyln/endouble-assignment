@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AlertService } from '../../core/alert/alert.service';
 
 @Injectable({
     providedIn: 'root',
@@ -9,6 +10,8 @@ export class DropboxChooserService {
         // Required. Called when a user selects an item in the Chooser.
         success: (files) => {
             console.log("Here's the file link: " + files[0].link);
+
+            this.alertService.success('Dropbox file uploaded successfully!');
 
             this.result$.next(files[0].link);
         },
@@ -48,7 +51,7 @@ export class DropboxChooserService {
 
     private result$: Subject<string> = new Subject();
 
-    constructor() {}
+    constructor(private alertService: AlertService) {}
 
     choose(extensions: string[]) {
         window.Dropbox.choose({
