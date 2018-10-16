@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { JobComponent } from './job/job.component';
 import { JobApplicationComponent } from './job/job-application/job-application.component';
 import { SuccessComponent } from './job/success/success.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'job', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
             { path: '**', redirectTo: 'job-application' },
         ],
     },
+    { path: 'not-found', component: NotFoundComponent },
     { path: '**', redirectTo: 'not-found' },
 ];
 

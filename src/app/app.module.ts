@@ -8,9 +8,10 @@ import { CoreModule } from './core/core.module';
 import { JobModule } from './job/job.module';
 import { SharedModule } from './shared/shared.module';
 import { ApiService } from './shared/services/api.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, NotFoundComponent],
     imports: [
         BrowserModule,
         HttpClientModule,
