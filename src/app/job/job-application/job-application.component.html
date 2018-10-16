@@ -18,7 +18,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="text"
-                                    id="firstName"
                                     class="form-control"
                                     ngModel=""
                                     name="firstName"
@@ -37,7 +36,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="text"
-                                    id="lastName"
                                     class="form-control"
                                     ngModel=""
                                     name="lastName"
@@ -81,17 +79,17 @@
                                 class="form-group mb-20px col-12 col-md-6">
                                 <div class="dropdown">
                                     <select
-                                        class="custom-select"
+                                        class="custom-select select-gender"
+                                        [(ngModel)]="genderModel"
                                         type="button"
-                                        ngModelGroup
-                                        #gender="ngModelGroup"
-                                        id="gender"
+                                        #gender="ngModel"
+                                        required
                                         name="gender"
                                         tabindex="4">
-                                        <option selected disabled>Gender</option>
-                                        <option value="man">Man</option>
-                                        <option value="women">Woman</option>
-                                        <option value="notToDisclose">Not to disclose</option>
+                                        <option disabled selected value="Gender">Gender</option>
+                                        <option value="Man">Man</option>
+                                        <option value="Woman">Woman</option>
+                                        <option value="Not to disclose">Not to disclose</option>
                                     </select>
 
                                 </div>
@@ -104,7 +102,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="email"
-                                    id="email"
                                     class="form-control"
                                     ngModel=""
                                     name="email"
@@ -123,8 +120,7 @@
 
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
-                                    type="text"
-                                    id="phone"
+                                    type="tel"
                                     class="form-control"
                                     ngModel=""
                                     name="phone"
@@ -148,7 +144,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="text"
-                                    id="address"
                                     class="form-control"
                                     ngModel=""
                                     name="address"
@@ -167,7 +162,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="tel"
-                                    id="houseNumber"
                                     class="form-control"
                                     ngModel=""
                                     name="houseNumber"
@@ -190,7 +184,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="text"
-                                    id="zipCode"
                                     class="form-control"
                                     ngModel=""
                                     name="zipCode"
@@ -214,7 +207,6 @@
                             <div class="form-group mb-20px col-12 col-md-6">
                                 <input
                                     type="text"
-                                    id="country"
                                     class="form-control"
                                     ngModel=""
                                     name="country"
@@ -246,7 +238,6 @@
                             <div class="form-group mb-20px col-12">
                                 <textarea
                                     type="text"
-                                    id="motivation"
                                     class="form-control"
                                     rows="6"
                                     ngModel=""

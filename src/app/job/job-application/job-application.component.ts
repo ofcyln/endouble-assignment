@@ -1,28 +1,34 @@
 import { Component, EventEmitter, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker';
-import { DropboxChooserService } from './dropbox-chooser.service';
-import { UploaderOptions, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
-import { AlertService } from '../../core/alert/alert.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-export interface Gender {
-    man: string;
-    woman: string;
-    notToDisclose: string;
-    // Prefer not to disclose
-}
+import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker';
+import { UploaderOptions, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
+import { DropboxChooserService } from './dropbox-chooser.service';
+import { AlertService } from '../../core/alert/alert.service';
 
 export interface FormValues {
-    firstName: string;
-    lastName: string;
-    email: string;
-    dateOfBirth: string;
-    gender: Gender;
-    address: string;
-    houseNumber: string;
-    zipCode: string;
-    motivation: string;
+    personalData: {
+        address: string;
+        country: string;
+        email: string;
+        firstName: string;
+        gender: 'Gender';
+        houseNumber: string;
+        lastName: string;
+        monthPickerStart: string;
+        phone: string;
+        zipCode: string;
+    };
+    attachments: {
+        motivation: string;
+        uploadPhoto: string;
+        uploadPhotoDropbox: string;
+        uploadPortfolio: string;
+        uploadPortfolioDropbox: string;
+        uploadResume: string;
+        uploadResumeDropbox: string;
+    };
 }
 
 @Component({
@@ -39,7 +45,10 @@ export class JobApplicationComponent implements OnInit {
     datePickerDirective: DatePickerDirective;
 
     public submitted: boolean = false;
-    public personalDetails: FormValues;
+
+    public formValues: FormValues;
+
+    public genderModel: string = 'Gender';
 
     public datePickerConfig: IDatePickerDirectiveConfig;
 
@@ -48,13 +57,9 @@ export class JobApplicationComponent implements OnInit {
     public photoDropboxLink: string = '';
 
     public ngxUploaderOptions: UploaderOptions;
-    public formData: FormData;
     public uploadingFiles: UploadFile[];
     public uploadInput: EventEmitter<UploadInput>;
-    public uploadFileOutput: EventEmitter<UploadOutput>;
-    public humanizeBytes: Function;
     public dragOver: boolean;
-    public contentLoaded: boolean = false;
     public uploadEvent: UploadInput;
 
     private readonly DOCUMENT_EXTENSIONS = ['.docx', '.doc', '.pdf', '.txt', '.rtf'];
@@ -173,9 +178,13 @@ export class JobApplicationComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        console.log(this.signupForm);
+        let form = this.formValues;
+        form = this.signupForm.value;
+
+        console.log(form);
+
+        this.signupForm.reset();
 
         this.router.navigate(['/job/success']);
-        // this.signupForm.reset();
     }
 }

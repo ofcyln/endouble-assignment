@@ -66,6 +66,9 @@
                 text-align: right;
                 margin-bottom: 20px;
             }
+            .select-gender.ng-valid.ng-dirty.ng-touched {
+                color: #01385f;
+            }
         }
         .back-to-description {
             a {
