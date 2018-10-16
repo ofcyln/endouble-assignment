@@ -1,0 +1,26 @@
+.success-area {
+    font-size: 30px;
+    text-align: center;
+    margin: 50px 0;
+    .success-title {
+        font-weight: bold;
+        color: #5c5c5c;
+        text-align: center;
+    }
+
+    .success-icon {
+        -webkit-text-stroke: 13px white;
+        font-size: 150px;
+        color: #37b20a;
+        display: inline-flex;
+        margin-bottom: 20px;
+    }
+
+    .success-text {
+        margin-top: 15px;
+        font-size: 25px;
+        color: #666;
+        text-align: center;
+        font-weight: lighter;
+    }
+}
