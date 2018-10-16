@@ -47,7 +47,8 @@
             transition: all 0.2s ease-in-out;
             display: block !important;
             &.active {
-                transform: none;
+                -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
             }
             .briefcase-area {
                 display: none !important;
