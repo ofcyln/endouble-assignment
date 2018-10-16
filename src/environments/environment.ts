@@ -2,8 +2,10 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// TODO: refactor when backend is ready
 export const environment = {
     production: false,
+    jobApplicationEndpoint: '../../../assets/api/',
 };
 
 /*

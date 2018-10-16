@@ -291,7 +291,7 @@
                                                 ngModel=""
                                                 name="uploadResume"
                                                 #uploadResume="ngModel"
-                                                ngFileSelect>
+                                                (change)="handleFileInput($event.target.files, 'uploadResume')">
                                         </label>
                                     </div>
 
@@ -311,7 +311,6 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="resumeDropboxLink"
                                                 name="uploadResumeDropbox"
-                                                uploadResumeDropbox
                                                 #uploadResumeDropbox="ngModel"
                                                 (click)="chooseResume()">
                                         </label>
@@ -347,7 +346,8 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPortfolio"
-                                                #uploadPortfolio="ngModel">
+                                                #uploadPortfolio="ngModel"
+                                                (change)="handleFileInput($event.target.files, 'uploadPortfolio')">
                                         </label>
                                     </div>
 
@@ -402,8 +402,8 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPhoto"
-                                                uploadPhoto
-                                                #uploadPhoto="ngModel">
+                                                #uploadPhoto="ngModel"
+                                                (change)="handleFileInput($event.target.files, 'uploadPhoto')">
                                         </label>
                                     </div>
 
@@ -423,7 +423,6 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="photoDropboxLink"
                                                 name="uploadPhotoDropbox"
-                                                uploadPhotoDropbox
                                                 #uploadPhotoDropbox="ngModel"
                                                 (click)="choosePhoto()">
                                         </label>

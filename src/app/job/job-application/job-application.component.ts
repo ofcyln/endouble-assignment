@@ -6,30 +6,31 @@ import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker
 import { DropboxChooserService } from './dropbox-chooser.service';
 import { AlertService } from '../../core/alert/alert.service';
 import { HeaderService } from '../../core/header/header.service';
+import { FormSubmissionResponse, JobApplicationService } from './job-application.service';
 
 export interface FormValues {
-    personalData: {
+    personalData?: {
         address: string;
         country: string;
         email: string;
         firstName: string;
-        gender: 'Gender';
+        gender: string;
         houseNumber: string;
         lastName: string;
         birthDate: string;
         phone: string;
         zipCode: string;
     };
-    attachments: {
-        motivation: string;
-        uploadPhoto: string;
-        uploadPhotoDropbox: string;
-        uploadPortfolio: string;
-        uploadPortfolioDropbox: string;
-        uploadResume: string;
-        uploadResumeDropbox: string;
+    attachments?: {
+        motivation?: string;
+        uploadPhoto?: File;
+        uploadPhotoDropbox?: string;
+        uploadPortfolio?: File;
+        uploadPortfolioDropbox?: string;
+        uploadResume?: File;
+        uploadResumeDropbox?: string;
     };
-    sendCopy: boolean;
+    sendCopy?: boolean;
 }
 
 @Component({
@@ -45,8 +46,9 @@ export class JobApplicationComponent implements OnInit {
     @ViewChild('dateDirectivePickerStart')
     datePickerDirective: DatePickerDirective;
 
-    public submitted: boolean = false;
-    public formValues: FormValues;
+    public formValues: FormValues = {
+        attachments: {},
+    };
     public genderModel: string = 'Gender';
 
     public datePickerConfig: IDatePickerDirectiveConfig;
@@ -63,6 +65,7 @@ export class JobApplicationComponent implements OnInit {
         private alertService: AlertService,
         private router: Router,
         private headerService: HeaderService,
+        private jobApplicationService: JobApplicationService,
     ) {}
 
     ngOnInit() {
@@ -73,6 +76,10 @@ export class JobApplicationComponent implements OnInit {
             drops: 'down',
             showGoToCurrent: false,
         };
+    }
+
+    handleFileInput(files: FileList, key: string) {
+        this.formValues.attachments[key] = files.item(0);
     }
 
     chooseResume() {
@@ -109,17 +116,29 @@ export class JobApplicationComponent implements OnInit {
     }
 
     onSubmit() {
-        this.submitted = true;
+        const formValues = {
+            attachments: {
+                ...this.formValues.attachments,
+                ...this.signupForm.value.attachments,
+            },
+            ...this.signupForm.value,
+        };
 
-        let form = this.formValues;
-        form = this.signupForm.value;
+        this.jobApplicationService.submitForm(formValues).subscribe(
+            (result: FormSubmissionResponse) => {
+                this.signupForm.reset();
 
-        console.log(form);
+                this.headerService.scrollToTop();
 
-        this.signupForm.reset();
+                this.router.navigate(['/job/success']);
+            },
+            (error: Error) => {
+                this.alertService.error(error.message);
 
-        this.headerService.scrollToTop();
-
-        this.router.navigate(['/job/success']);
+                // TODO: remove this after backend implementation
+                // only for demonstration
+                this.router.navigate(['/job/success']);
+            },
+        );
     }
 }
