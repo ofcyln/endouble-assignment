@@ -29,6 +29,7 @@ export interface FormValues {
         uploadResume: string;
         uploadResumeDropbox: string;
     };
+    sendCopy: boolean;
 }
 
 @Component({

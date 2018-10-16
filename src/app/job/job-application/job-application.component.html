@@ -92,6 +92,9 @@
                                         <option value="Not to disclose">Not to disclose</option>
                                     </select>
 
+                                    <span
+                                        *ngIf="gender.valid && gender.touched && gender.dirty"
+                                        class="e-icon-ok valid-checkmark"></span>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +462,9 @@
                                             class="custom-checkbox"
                                             id="customCheckbox"
                                             type="checkbox"
-                                            value="checkbox">
+                                            name="sendCopy"
+                                            ngModel
+                                            #sendCopy="ngModel">
                                         <label
                                             for="customCheckbox"
                                             class="custom-checkbox-label"
@@ -470,6 +475,7 @@
                                         <button
                                             class="btn btn-upload col-12"
                                             type="submit"
+                                            aria-label="APPLY FOR THIS JOB"
                                             [disabled]="!f.valid">APPLY FOR THIS JOB
                                         </button>
                                     </div>
