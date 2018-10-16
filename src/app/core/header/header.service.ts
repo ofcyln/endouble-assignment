@@ -7,7 +7,7 @@ export class HeaderService {
 
     constructor(private scrollToService: ScrollToService) {}
 
-    openNavigation(): void {
+    toggleNavigation(): void {
         this.isNavActive = !this.isNavActive;
     }
 

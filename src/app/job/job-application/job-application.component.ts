@@ -6,6 +6,7 @@ import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker
 import { UploaderOptions, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
 import { DropboxChooserService } from './dropbox-chooser.service';
 import { AlertService } from '../../core/alert/alert.service';
+import { HeaderService } from '../../core/header/header.service';
 
 export interface FormValues {
     personalData: {
@@ -70,6 +71,7 @@ export class JobApplicationComponent implements OnInit {
         private dropboxChooserService: DropboxChooserService,
         private alertService: AlertService,
         private router: Router,
+        private headerService: HeaderService,
     ) {}
 
     ngOnInit() {
@@ -185,6 +187,8 @@ export class JobApplicationComponent implements OnInit {
         console.log(form);
 
         this.signupForm.reset();
+
+        this.headerService.scrollToTop();
 
         this.router.navigate(['/job/success']);
     }
