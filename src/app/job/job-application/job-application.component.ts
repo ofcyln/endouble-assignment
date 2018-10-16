@@ -1,9 +1,8 @@
-import { Component, EventEmitter, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { DatePickerDirective, IDatePickerDirectiveConfig } from 'ng2-date-picker';
-import { UploaderOptions, UploadFile, UploadInput, UploadOutput } from 'ngx-uploader';
 import { DropboxChooserService } from './dropbox-chooser.service';
 import { AlertService } from '../../core/alert/alert.service';
 import { HeaderService } from '../../core/header/header.service';
@@ -47,9 +46,7 @@ export class JobApplicationComponent implements OnInit {
     datePickerDirective: DatePickerDirective;
 
     public submitted: boolean = false;
-
     public formValues: FormValues;
-
     public genderModel: string = 'Gender';
 
     public datePickerConfig: IDatePickerDirectiveConfig;
@@ -57,12 +54,6 @@ export class JobApplicationComponent implements OnInit {
     public resumeDropboxLink: string = '';
     public portfolioDropboxLink: string = '';
     public photoDropboxLink: string = '';
-
-    public ngxUploaderOptions: UploaderOptions;
-    public uploadingFiles: UploadFile[];
-    public uploadInput: EventEmitter<UploadInput>;
-    public dragOver: boolean;
-    public uploadEvent: UploadInput;
 
     private readonly DOCUMENT_EXTENSIONS = ['.docx', '.doc', '.pdf', '.txt', '.rtf'];
     private readonly IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg'];
@@ -82,22 +73,6 @@ export class JobApplicationComponent implements OnInit {
             drops: 'down',
             showGoToCurrent: false,
         };
-
-        this.ngxUploaderOptions = {
-            concurrency: 1,
-            maxUploads: 1,
-            allowedContentTypes: [
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                'application/msword',
-                'application/rtf',
-                'text/plain',
-                'application/pdf',
-                'image/jpeg',
-                'image/png',
-            ],
-        };
-        this.uploadingFiles = [];
-        this.uploadInput = new EventEmitter<UploadInput>();
     }
 
     chooseResume() {
@@ -131,51 +106,6 @@ export class JobApplicationComponent implements OnInit {
                 this.alertService.error(`Error: ${error}`);
             },
         );
-    }
-
-    onUploadOutput(output: UploadOutput): void {
-        if (output.type === 'allAddedToQueue') {
-            this.uploadInput.emit(this.uploadEvent);
-        } else if (output.type === 'addedToQueue' && typeof output.file !== 'undefined') {
-            if (output.file.size > 4e6) {
-                this.alertService.error(
-                    'Allowed file size is 4Mb, your file is bigger than allowed size!',
-                );
-            } else {
-                this.uploadingFiles.push(output.file);
-            }
-        } else if (output.type === 'uploading' && typeof output.file !== 'undefined') {
-            const index = this.uploadingFiles.findIndex(
-                (file) => typeof output.file !== 'undefined' && file.id === output.file.id,
-            );
-
-            this.uploadingFiles[index] = output.file;
-        } else if (output.type === 'rejected' && typeof output.file !== 'undefined') {
-            this.alertService.error('File type is not correct!');
-        } else if (output.type === 'removed') {
-            this.uploadingFiles = this.uploadingFiles.filter(
-                (file: UploadFile) => file !== output.file,
-            );
-        } else if (output.type === 'dragOver') {
-            this.dragOver = true;
-        } else if (output.type === 'dragOut') {
-            this.dragOver = false;
-        } else if (output.type === 'drop') {
-            this.dragOver = false;
-        } else if (output.file.progress.data.percentage === 100) {
-            this.alertService.success('File uploaded successfully!');
-        }
-    }
-
-    startUpload(): void {
-        this.uploadEvent = {
-            type: 'uploadAll',
-            url: 'https://endouble-assignment.firebaseio.com/file.json',
-            method: 'POST',
-            data: { foo: 'bar' },
-        };
-
-        this.uploadInput.emit(this.uploadEvent);
     }
 
     onSubmit() {
