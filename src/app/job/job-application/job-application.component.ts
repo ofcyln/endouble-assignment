@@ -64,7 +64,6 @@ export class JobApplicationComponent implements OnInit {
         private dropboxChooserService: DropboxChooserService,
         private alertService: AlertService,
         private router: Router,
-        private route: ActivatedRoute,
     ) {}
 
     ngOnInit() {
