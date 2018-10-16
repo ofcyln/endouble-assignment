@@ -277,7 +277,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Resume file upload">
+                                            aria-label="Resume file upload"
+                                            tabindex="12">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -289,7 +290,6 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadResume"
-                                                tabindex="12"
                                                 #uploadResume="ngModel"
                                                 ngFileSelect
                                                 [options]="ngxUploaderOptions"
@@ -302,7 +302,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Dropbox resume file upload">
+                                            aria-label="Dropbox resume file upload"
+                                            tabindex="13">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -314,7 +315,6 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="resumeDropboxLink"
                                                 name="uploadResumeDropbox"
-                                                tabindex="13"
                                                 uploadResumeDropbox
                                                 #uploadResumeDropbox="ngModel"
                                                 (click)="chooseResume()">
@@ -338,7 +338,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Portfolio file upload">
+                                            aria-label="Portfolio file upload"
+                                            tabindex="14">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -350,7 +351,6 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPortfolio"
-                                                tabindex="14"
                                                 #uploadPortfolio="ngModel">
                                         </label>
                                     </div>
@@ -358,7 +358,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Dropbox portfolio file upload">
+                                            aria-label="Dropbox portfolio file upload"
+                                            tabindex="15">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -370,7 +371,6 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="portfolioDropboxLink"
                                                 name="uploadPortfolioDropbox"
-                                                tabindex="15"
                                                 #uploadPortfolioDropbox="ngModel"
                                                 (click)="choosePortfolio()">
                                         </label>
@@ -393,7 +393,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Photo upload">
+                                            aria-label="Photo upload"
+                                            tabindex="16">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -405,7 +406,6 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPhoto"
-                                                tabindex="12"
                                                 uploadPhoto
                                                 #uploadPhoto="ngModel">
                                         </label>
@@ -414,7 +414,8 @@
                                     <div class="col-6 col-sm-6 col-md-4 align-items-center upload-element d-none-mobile">
                                         <label
                                             class="btn btn-upload btn-block no-margin"
-                                            aria-label="Dropbox photo upload">
+                                            aria-label="Dropbox photo upload"
+                                            tabindex="17">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -426,7 +427,6 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="photoDropboxLink"
                                                 name="uploadPhotoDropbox"
-                                                tabindex="13"
                                                 uploadPhotoDropbox
                                                 #uploadPhotoDropbox="ngModel"
                                                 (click)="choosePhoto()">
@@ -447,7 +447,7 @@
 
                     <div class="col-12 col-md-6 back-to-description">
                         <div class="row">
-                            <a class="col-12 cursor-pointer" routerLink="/">
+                            <a class="cursor-pointer back-to-job-icon" routerLink="/">
                                 < Back to job description
                             </a>
                         </div>
@@ -468,16 +468,17 @@
                                         <label
                                             for="customCheckbox"
                                             class="custom-checkbox-label"
+                                            tabindex="18"
                                             aria-label="Send me a copy">Send me a copy</label>
                                     </div>
 
                                     <div class="col-12 col-sm-8 col-md-8 submit-button-area">
-                                        <button
+                                        <input
                                             class="btn btn-upload col-12"
                                             type="submit"
-                                            aria-label="APPLY FOR THIS JOB"
-                                            [disabled]="!f.valid">APPLY FOR THIS JOB
-                                        </button>
+                                            tabindex="19"
+                                            value="APPLY FOR THIS JOB"
+                                            aria-label="APPLY FOR THIS JOB" />
                                     </div>
                                 </div>
                             </div>
