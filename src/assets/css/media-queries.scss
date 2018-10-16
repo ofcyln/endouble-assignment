@@ -40,9 +40,11 @@
             transform-origin: 0% 0%;
             -webkit-transform: translate(-100%, 0);
             transform: translate(-100%, 0);
-            transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
             display: block !important;
             &.active {
                 transform: none;
