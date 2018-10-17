@@ -33,10 +33,20 @@ export interface FormValues {
     sendCopy?: boolean;
 }
 
-export enum FileTypes {
+export enum UploadedFileCategory {
     Resume = 'resume',
     Portfolio = 'portfolio',
     Photo = 'photo',
+}
+
+export enum MimeFileType {
+    Docx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    Doc = 'application/msword',
+    Rtf = 'application/rtf',
+    Pdf = 'application/pdf',
+    Txt = 'text/plain',
+    Jpg = 'text/jpeg',
+    Png = 'text/png',
 }
 
 @Component({
@@ -96,14 +106,13 @@ export class JobApplicationComponent implements OnInit {
         let allowedFilesize = files.item(0).size < 4e6;
 
         switch (true) {
-            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ===
-                file && allowedFilesize:
-            case 'application/msword' === file && allowedFilesize:
-            case 'application/rtf' === file && allowedFilesize:
-            case 'application/pdf' === file && allowedFilesize:
-            case 'text/plain' === file && allowedFilesize:
-            case 'image/jpeg' === file && allowedFilesize:
-            case 'image/png' === file && allowedFilesize:
+            case MimeFileType.Docx === file && allowedFilesize:
+            case MimeFileType.Doc === file && allowedFilesize:
+            case MimeFileType.Rtf === file && allowedFilesize:
+            case MimeFileType.Pdf === file && allowedFilesize:
+            case MimeFileType.Txt === file && allowedFilesize:
+            case MimeFileType.Jpg === file && allowedFilesize:
+            case MimeFileType.Png === file && allowedFilesize:
                 this.fileTypeSupported = true;
 
                 this.formValues.attachments[key] = files.item(0);
@@ -116,13 +125,15 @@ export class JobApplicationComponent implements OnInit {
         }
 
         switch (true) {
-            case FileTypes.Resume === key && this.fileTypeSupported && allowedFilesize:
+            case UploadedFileCategory.Resume === key && this.fileTypeSupported && allowedFilesize:
                 this.resumeUploaded = true;
                 break;
-            case FileTypes.Portfolio === key && this.fileTypeSupported && allowedFilesize:
+            case UploadedFileCategory.Portfolio === key &&
+                this.fileTypeSupported &&
+                allowedFilesize:
                 this.portfolioUploaded = true;
                 break;
-            case FileTypes.Photo === key && this.fileTypeSupported && allowedFilesize:
+            case UploadedFileCategory.Photo === key && this.fileTypeSupported && allowedFilesize:
                 this.photoUploaded = true;
                 break;
             default:
