@@ -86,6 +86,8 @@ export class JobApplicationComponent implements OnInit {
     private readonly DOCUMENT_EXTENSIONS = ['.docx', '.doc', '.pdf', '.txt', '.rtf'];
     private readonly IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg'];
 
+    private readonly FILESIZE_LIMIT = 4e6;
+
     constructor(
         private dropboxChooserService: DropboxChooserService,
         private alertService: AlertService,
@@ -109,7 +111,7 @@ export class JobApplicationComponent implements OnInit {
 
     handleFileInput(files: FileList, key: string) {
         let file = files.item(0).type;
-        let allowedFilesize = files.item(0).size < 4e6;
+        let allowedFilesize = files.item(0).size < this.FILESIZE_LIMIT;
 
         switch (true) {
             case MimeFileType.Docx === file && allowedFilesize:
