@@ -68,6 +68,7 @@ export class JobApplicationComponent implements OnInit {
     public resumeDropboxLink: string = '';
     public portfolioDropboxLink: string = '';
     public photoDropboxLink: string = '';
+    public fileTypeSupported: boolean = false;
 
     private readonly DOCUMENT_EXTENSIONS = ['.docx', '.doc', '.pdf', '.txt', '.rtf'];
     private readonly IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg'];
@@ -91,24 +92,45 @@ export class JobApplicationComponent implements OnInit {
     }
 
     handleFileInput(files: FileList, key: string) {
-        switch (key) {
-            case FileTypes.Resume:
+        let file = files.item(0).type;
+        let allowedFilesize = files.item(0).size < 4e6;
+
+        switch (true) {
+            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ===
+                file && allowedFilesize:
+            case 'application/msword' === file && allowedFilesize:
+            case 'application/rtf' === file && allowedFilesize:
+            case 'application/pdf' === file && allowedFilesize:
+            case 'text/plain' === file && allowedFilesize:
+            case 'image/jpeg' === file && allowedFilesize:
+            case 'image/png' === file && allowedFilesize:
+                this.fileTypeSupported = true;
+
+                this.formValues.attachments[key] = files.item(0);
+
+                this.alertService.success('Selected file uploaded successfully!');
+
+                break;
+            default:
+                this.alertService.error("File couldn't be uploaded!");
+        }
+
+        switch (true) {
+            case FileTypes.Resume === key && this.fileTypeSupported && allowedFilesize:
                 this.resumeUploaded = true;
                 break;
-            case FileTypes.Portfolio:
+            case FileTypes.Portfolio === key && this.fileTypeSupported && allowedFilesize:
                 this.portfolioUploaded = true;
                 break;
-            case FileTypes.Photo:
+            case FileTypes.Photo === key && this.fileTypeSupported && allowedFilesize:
                 this.photoUploaded = true;
                 break;
             default:
-                this.alertService.error(`There is no file type such as ${key}!`);
+                this.alertService.error(
+                    `Please try to upload supported file formats or check maximum allowed file size of 4MB!`,
+                );
                 break;
         }
-
-        this.alertService.success('Selected file uploaded successfully!');
-
-        this.formValues.attachments[key] = files.item(0);
     }
 
     chooseResume() {
