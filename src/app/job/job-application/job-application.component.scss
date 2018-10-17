@@ -66,8 +66,13 @@
                 text-align: right;
                 margin-bottom: 20px;
             }
-            .select-gender.ng-valid.ng-dirty {
-                color: #01385f;
+            .select-gender {
+                &.ng-valid.ng-dirty {
+                    color: #01385f;
+                }
+                &.ng-pristine.ng-touched {
+                    border: 1px solid #c80000;
+                }
             }
         }
         .back-to-description {
