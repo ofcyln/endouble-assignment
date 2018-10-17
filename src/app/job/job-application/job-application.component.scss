@@ -254,11 +254,29 @@
                 &.dp-material {
                     .dp-nav-header-btn {
                         width: auto;
+                        padding: 8px;
+                        height: auto;
                     }
                     .dp-calendar-nav-container {
-                        height: 35px;
+                        height: 45px;
                         margin: 0 7px;
                         border: 0;
+                    }
+                    .dp-calendar-nav-left, .dp-calendar-nav-right {
+                        padding: 15px;
+                        &:hover {
+                            background: rgba(0,0,0,.05);
+                        }
+                    }
+                    .dp-calendar-nav-left {
+                        &:before {
+                            margin-left: -2px;
+                        }
+                    }
+                    .dp-calendar-nav-right {
+                        &:before {
+                            margin-left: -6px;
+                        }
                     }
                 }
             }
