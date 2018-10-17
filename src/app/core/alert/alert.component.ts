@@ -19,13 +19,12 @@ export class AlertComponent implements OnInit {
                 return;
             }
 
-            // add alert to array
             this.alerts.push(alert);
         });
     }
 
     removeAlert(alert: Alert) {
-        this.alerts = this.alerts.filter((x) => x !== alert);
+        this.alerts = this.alerts.filter((item: Alert) => item !== alert);
     }
 
     cssClass(alert: Alert) {

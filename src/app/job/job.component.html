@@ -2,8 +2,13 @@
     <section class="row job-header">
         <figure class="col">
             <figcaption>
-                <h1 class="font-yanone-bold">PURCHASING ASSISTANT</h1>
-                <h2 class="font-yanone-regular">AMSTERDAM, THE NETHERLANDS</h2>
+                <h1
+                    class="font-yanone-bold"
+                    aria-label="PURCHASING ASSISTANT">PURCHASING ASSISTANT</h1>
+
+                <h2
+                    class="font-yanone-regular"
+                    aria-label="AMSTERDAM, THE NETHERLANDS">AMSTERDAM, THE NETHERLANDS</h2>
             </figcaption>
         </figure>
     </section>
@@ -15,9 +20,14 @@
             <figcaption class="job-application-info">
                 <div class="row">
                     <div class="col-12 col-md-6 col-sm-6 application-procedure-area">
-                        <h3 class="col-12 no-padding font-yanone-bold">APPLICATION PROCEDURE</h3>
+                        <h3
+                            class="col-12 no-padding font-yanone-bold"
+                            aria-label="APPLICATION PROCEDURE"
+                            aria-describedby="applicationProcedure">APPLICATION PROCEDURE</h3>
 
-                        <ul class="col">
+                        <ul
+                            class="col"
+                            id="applicationProcedure">
                             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                             <li>Morbi dapibus sem et magna porta, a cursus justo eleifend.</li>
                             <li>Mauris nec elit sed lacus viverra blandit at ut erat.</li>
@@ -26,14 +36,23 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-sm-6 question-area d-none-lt-sm">
-                        <h3 class="col-12 no-padding font-yanone-bold">GOT A QUESTION?</h3>
+                        <h3
+                            class="col-12 no-padding font-yanone-bold"
+                            aria-label="GOT A QUESTION?">GOT A QUESTION?</h3>
 
-                        <p>Please contact recruitment</p>
-                        <p class="no-margin">T. +31 20 123 456 78</p>
+                        <p aria-label="Please contact recruitment">Please contact recruitment</p>
+
+                        <p
+                            class="no-margin"
+                            aria-label="Phone number +31 20 123 456 78">T. +31 20 123 456 78</p>
+
                         <p>Or <a routerLink="/" aria-label="Send us an email">send us an email</a></p>
                     </div>
 
-                    <a routerLink="/" aria-label="Continue reading" class="continue-button cursor-pointer">
+                    <a
+                        routerLink="/"
+                        aria-label="Continue reading"
+                        class="continue-button cursor-pointer">
                         Continue reading
                     </a>
                 </div>
