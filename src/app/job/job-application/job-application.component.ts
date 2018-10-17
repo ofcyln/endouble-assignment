@@ -52,6 +52,8 @@ export class JobApplicationComponent implements OnInit {
     @ViewChild('dateDirectivePickerStart')
     datePickerDirective: DatePickerDirective;
 
+    public submitting: boolean = false;
+
     public formValues: FormValues = {
         attachments: {},
     };
@@ -89,22 +91,22 @@ export class JobApplicationComponent implements OnInit {
     }
 
     handleFileInput(files: FileList, key: string) {
-        if (files.item(0)) {
-            switch (key) {
-                case FileTypes.Resume:
-                    this.resumeUploaded = true;
-                    break;
-                case FileTypes.Portfolio:
-                    this.portfolioUploaded = true;
-                    break;
-                case FileTypes.Photo:
-                    this.photoUploaded = true;
-                    break;
-                default:
-                    this.alertService.error(`There is no file type such as ${key}!`);
-                    break;
-            }
+        switch (key) {
+            case FileTypes.Resume:
+                this.resumeUploaded = true;
+                break;
+            case FileTypes.Portfolio:
+                this.portfolioUploaded = true;
+                break;
+            case FileTypes.Photo:
+                this.photoUploaded = true;
+                break;
+            default:
+                this.alertService.error(`There is no file type such as ${key}!`);
+                break;
         }
+
+        this.alertService.success('Selected file uploaded successfully!');
 
         this.formValues.attachments[key] = files.item(0);
     }
@@ -143,6 +145,8 @@ export class JobApplicationComponent implements OnInit {
     }
 
     onSubmit() {
+        this.submitting = true;
+
         const formValues = {
             attachments: {
                 ...this.formValues.attachments,
@@ -153,6 +157,8 @@ export class JobApplicationComponent implements OnInit {
 
         this.jobApplicationService.submitForm(formValues).subscribe(
             (result: FormSubmissionResponse) => {
+                this.submitting = false;
+
                 this.signupForm.reset();
 
                 this.headerService.scrollToTop();
@@ -160,7 +166,11 @@ export class JobApplicationComponent implements OnInit {
                 this.router.navigate(['/job/success']);
             },
             (error: Error) => {
+                this.submitting = false;
+
                 this.alertService.error(error.message);
+
+                this.headerService.scrollToTop();
 
                 // TODO: remove this after backend implementation
                 // only for demonstration
