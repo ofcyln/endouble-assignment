@@ -9,10 +9,17 @@ import { DropboxChooserService } from './job-application/dropbox-chooser.service
 import { RouterModule } from '@angular/router';
 import { SuccessComponent } from './success/success.component';
 import { JobApplicationService } from './job-application/job-application.service';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
     declarations: [JobComponent, JobApplicationComponent, SuccessComponent],
-    imports: [CommonModule, FormsModule, DpDatePickerModule, RouterModule],
+    imports: [
+        CommonModule,
+        FormsModule,
+        DpDatePickerModule,
+        RouterModule,
+        DeviceDetectorModule.forRoot(),
+    ],
     providers: [DropboxChooserService, JobApplicationService],
 })
 export class JobModule {}

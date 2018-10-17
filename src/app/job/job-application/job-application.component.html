@@ -290,7 +290,7 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 [disabled]="resumeDropboxLink.length > 1"
-                                                [required]="resumeDropboxLink.length < 1"
+                                                [required]="!isMobile && (resumeDropboxLink.length < 1)"
                                                 name="uploadResume"
                                                 #uploadResume="ngModel"
                                                 (change)="handleFileInput($event.target.files, 'resume')">

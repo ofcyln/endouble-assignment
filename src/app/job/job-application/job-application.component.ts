@@ -7,6 +7,7 @@ import { DropboxChooserService } from './dropbox-chooser.service';
 import { AlertService } from '../../core/alert/alert.service';
 import { HeaderService } from '../../core/header/header.service';
 import { FormSubmissionResponse, JobApplicationService } from './job-application.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 export interface FormValues {
     personalData?: {
@@ -64,6 +65,8 @@ export class JobApplicationComponent implements OnInit {
 
     public submitting: boolean = false;
 
+    public isMobile: boolean;
+
     public formValues: FormValues = {
         attachments: {},
     };
@@ -89,6 +92,7 @@ export class JobApplicationComponent implements OnInit {
         private router: Router,
         private headerService: HeaderService,
         private jobApplicationService: JobApplicationService,
+        private deviceService: DeviceDetectorService,
     ) {}
 
     ngOnInit() {
@@ -99,6 +103,8 @@ export class JobApplicationComponent implements OnInit {
             drops: 'down',
             showGoToCurrent: false,
         };
+
+        this.isMobile = this.deviceService.isMobile();
     }
 
     handleFileInput(files: FileList, key: string) {
