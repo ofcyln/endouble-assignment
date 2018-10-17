@@ -89,6 +89,7 @@
                     top: 0;
                     right: 0;
                     color: #01385f;
+                    font-size: 16px;
                 }
             }
             .upload-heading {
@@ -208,8 +209,9 @@
             &.focus, &:focus {
                 box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
             }
-            &:disabled {
+            &:disabled, &.disabled {
                 cursor: not-allowed;
+                opacity: 0.65;
             }
         }
         dp-date-picker {

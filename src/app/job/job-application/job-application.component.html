@@ -269,8 +269,7 @@
                                     <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Resume *
                                         <span
-                                            *ngIf="(uploadResume.valid && uploadResume.touched) ||
-                                            (uploadResumeDropbox.valid && uploadResumeDropbox.touched)"
+                                            *ngIf="resumeUploaded || uploadResumeDropbox.valid"
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
@@ -278,7 +277,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Resume file upload"
-                                            tabindex="12">
+                                            tabindex="12"
+                                            [ngClass]="{ 'disabled': resumeDropboxLink.length > 1 }">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -289,9 +289,11 @@
                                                 id="uploadResume"
                                                 class="form-control d-none"
                                                 ngModel=""
+                                                [disabled]="resumeDropboxLink.length > 1"
+                                                [required]="resumeDropboxLink.length < 1"
                                                 name="uploadResume"
                                                 #uploadResume="ngModel"
-                                                (change)="handleFileInput($event.target.files, 'uploadResume')">
+                                                (change)="handleFileInput($event.target.files, 'resume')">
                                         </label>
                                     </div>
 
@@ -299,7 +301,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox resume file upload"
-                                            tabindex="13">
+                                            tabindex="13"
+                                            [ngClass]="{ 'disabled': resumeUploaded }">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -310,6 +313,8 @@
                                                 id="uploadResumeDropbox"
                                                 class="form-control d-none"
                                                 [(ngModel)]="resumeDropboxLink"
+                                                [disabled]="resumeUploaded"
+                                                [required]="!resumeUploaded"
                                                 name="uploadResumeDropbox"
                                                 #uploadResumeDropbox="ngModel"
                                                 (click)="chooseResume()">
@@ -325,8 +330,7 @@
                                     <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Portfolio
                                         <span
-                                            *ngIf="(uploadPortfolio.valid && uploadPortfolio.touched) ||
-                                            (uploadPortfolioDropbox.valid && uploadPortfolioDropbox.touched)"
+                                            *ngIf="portfolioUploaded || portfolioDropboxLink.length > 1"
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
@@ -334,7 +338,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Portfolio file upload"
-                                            tabindex="14">
+                                            tabindex="14"
+                                            [ngClass]="{ 'disabled': portfolioDropboxLink.length > 1 }">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -346,8 +351,9 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPortfolio"
+                                                [disabled]="portfolioDropboxLink.length > 1"
                                                 #uploadPortfolio="ngModel"
-                                                (change)="handleFileInput($event.target.files, 'uploadPortfolio')">
+                                                (change)="handleFileInput($event.target.files, 'portfolio')">
                                         </label>
                                     </div>
 
@@ -355,7 +361,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox portfolio file upload"
-                                            tabindex="15">
+                                            tabindex="15"
+                                            [ngClass]="{ 'disabled': portfolioUploaded }">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -367,6 +374,7 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="portfolioDropboxLink"
                                                 name="uploadPortfolioDropbox"
+                                                [disabled]="portfolioUploaded"
                                                 #uploadPortfolioDropbox="ngModel"
                                                 (click)="choosePortfolio()">
                                         </label>
@@ -381,8 +389,7 @@
                                     <p class="col-6 col-sm-6 col-md-4 no-margin upload-heading">
                                         Photo
                                         <span
-                                            *ngIf="(uploadPhoto.valid && uploadPhoto.touched) ||
-                                            (uploadPhotoDropbox.valid && uploadPhotoDropbox.touched)"
+                                            *ngIf="photoUploaded || photoDropboxLink.length > 1"
                                             class="e-icon-ok valid-checkmark"></span>
                                     </p>
 
@@ -390,7 +397,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Photo upload"
-                                            tabindex="16">
+                                            tabindex="16"
+                                            [ngClass]="{ 'disabled': photoDropboxLink.length > 1 }">
 
                                             <span class="e-icon-monitor upload-element-icon"></span>
 
@@ -402,8 +410,9 @@
                                                 class="form-control d-none"
                                                 ngModel=""
                                                 name="uploadPhoto"
+                                                [disabled]="photoDropboxLink.length > 1"
                                                 #uploadPhoto="ngModel"
-                                                (change)="handleFileInput($event.target.files, 'uploadPhoto')">
+                                                (change)="handleFileInput($event.target.files, 'photo')">
                                         </label>
                                     </div>
 
@@ -411,7 +420,8 @@
                                         <label
                                             class="btn btn-upload btn-block no-margin"
                                             aria-label="Dropbox photo upload"
-                                            tabindex="17">
+                                            tabindex="17"
+                                            [ngClass]="{ 'disabled': photoUploaded }">
 
                                             <span class="e-icon-dropbox upload-element-icon"></span>
 
@@ -423,6 +433,7 @@
                                                 class="form-control d-none"
                                                 [(ngModel)]="photoDropboxLink"
                                                 name="uploadPhotoDropbox"
+                                                [disabled]="photoUploaded"
                                                 #uploadPhotoDropbox="ngModel"
                                                 (click)="choosePhoto()">
                                         </label>

@@ -33,6 +33,12 @@ export interface FormValues {
     sendCopy?: boolean;
 }
 
+export enum FileTypes {
+    Resume = 'resume',
+    Portfolio = 'portfolio',
+    Photo = 'photo',
+}
+
 @Component({
     selector: 'app-job-application',
     templateUrl: './job-application.component.html',
@@ -52,6 +58,10 @@ export class JobApplicationComponent implements OnInit {
     public genderModel: string = 'Gender';
 
     public datePickerConfig: IDatePickerDirectiveConfig;
+
+    public resumeUploaded: boolean = false;
+    public portfolioUploaded: boolean = false;
+    public photoUploaded: boolean = false;
 
     public resumeDropboxLink: string = '';
     public portfolioDropboxLink: string = '';
@@ -79,6 +89,23 @@ export class JobApplicationComponent implements OnInit {
     }
 
     handleFileInput(files: FileList, key: string) {
+        if (files.item(0)) {
+            switch (key) {
+                case FileTypes.Resume:
+                    this.resumeUploaded = true;
+                    break;
+                case FileTypes.Portfolio:
+                    this.portfolioUploaded = true;
+                    break;
+                case FileTypes.Photo:
+                    this.photoUploaded = true;
+                    break;
+                default:
+                    this.alertService.error(`There is no file type such as ${key}!`);
+                    break;
+            }
+        }
+
         this.formValues.attachments[key] = files.item(0);
     }
 
