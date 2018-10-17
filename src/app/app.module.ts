@@ -6,20 +6,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { JobModule } from './job/job.module';
-import { SharedModule } from './shared/shared.module';
 import { ApiService } from './shared/services/api.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
     declarations: [AppComponent, NotFoundComponent],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        CoreModule,
-        JobModule,
-        AppRoutingModule,
-        SharedModule,
-    ],
+    imports: [BrowserModule, HttpClientModule, CoreModule, JobModule, AppRoutingModule],
     providers: [ApiService],
     bootstrap: [AppComponent],
 })

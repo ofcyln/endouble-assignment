@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { SharedModule } from '../shared/shared.module';
 import { MyBriefcaseComponent } from './header/my-briefcase/my-briefcase.component';
 import { LogoComponent } from './header/logo/logo.component';
 import { SearchComponent } from './header/search/search.component';
@@ -22,7 +21,7 @@ import { AlertModule } from './alert/alert.module';
         SearchComponent,
         HamburgerMenuComponent,
     ],
-    imports: [CommonModule, SharedModule, AppRoutingModule, ScrollToModule.forRoot(), AlertModule],
+    imports: [CommonModule, AppRoutingModule, ScrollToModule.forRoot(), AlertModule],
     providers: [HeaderService],
     exports: [AppRoutingModule, HeaderComponent, FooterComponent, AlertModule],
 })
