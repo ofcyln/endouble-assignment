@@ -116,6 +116,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 * Form data is collected and provided on submitting the form. Data is sent asynchronously by `HTTP POST request` with `RxJS` observables. The `HTTP POST request` posts the form data to mock file URL `assets/api`. I also created an interface for a hypothetical response from the server for this request. A refactor must be done when a backend is ready to make it work on live environment. Although this POST request fails on local environment, I intentionally redirected users to success page for demonstration purposes.
 
+* I didn't have time to run a unit test with the configuration for `TestBed` and `Jasmine`.
+
 * `Angular production build configuration` is used for optimizing bundle, using tree-shaking, aot compilation, compression.
 
 * The total bundle size of the app is `~630KB` including all CSS, JS, IMG, FONT and HTML files.
